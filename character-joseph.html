@@ -7,41 +7,64 @@
 <title>Joseph - He Resisted Temptation (Walk Courageously With God, ch. 8)</title>
 <style>
   :root{--p:#E8E6E0;--s:#B4B2A9;--muted:#9C9A92;--line:#3A3A38;--bg:#14161a;--surface:#1E2126;
-    --accent:#85B7EB;--warning:#EF9F27;--danger:#F09595;--good:#9BD19B;--purple:#C3A8E8;
+    --card:#1A1D22;--accent:#85B7EB;--good:#9BD19B;--purple:#C3A8E8;
+    --person:#4db3aa;--way:#e0983f;--truth:#a884d6;--life:#5cb56e;--bandtext:#14161a;
+    --scripture:#262a31;--scripborder:#6b5d3a;--hibg:#3b3418;--hitext:#ffe08a;
     --fs:19px;--ws:0.03em;--ls:0.01em;}
   html[data-theme="light"]{--p:#1B1B1A;--s:#4A4A47;--muted:#6B6B67;--line:#D6D3CC;--bg:#FBF9F4;
-    --surface:#F1EEE6;--accent:#1F5FA8;--good:#2F7A3F;--purple:#6B4CA0;--warning:#9A6200;}
+    --surface:#F1EEE6;--card:#FFFFFF;--accent:#1F5FA8;--good:#2F7A3F;--purple:#6B4CA0;
+    --person:#2e6f6a;--way:#b5651d;--truth:#6a4c93;--life:#2f6d3c;--bandtext:#ffffff;
+    --scripture:#f3ecd8;--scripborder:#cdbf98;--hibg:#fff4cf;--hitext:#2b2b33;}
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--p);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.7;font-size:var(--fs);word-spacing:var(--ws);letter-spacing:var(--ls);
     text-align:left;}
-  main{max-width:780px;margin:0 auto;padding:28px 22px 80px;}
+  main{max-width:800px;margin:0 auto;padding:28px 22px 80px;}
   h1{font-size:1.42em;font-weight:600;line-height:1.3;margin:0 0 6px;letter-spacing:0;}
-  h2{font-size:1.1em;font-weight:600;margin:38px 0 10px;padding-top:16px;
-     border-top:1px solid var(--line);letter-spacing:0;}
-  h2 .num{color:var(--accent);font-weight:700;margin-right:10px;}
-  h3{font-size:.92em;font-weight:600;margin:22px 0 4px;color:var(--s);
-     text-transform:uppercase;letter-spacing:.06em;}
+  h3{font-size:.9em;font-weight:700;margin:22px 0 4px;color:var(--s);
+     text-transform:uppercase;letter-spacing:.07em;}
   p{margin:14px 0;max-width:66ch;}
-  ul{padding-left:22px;max-width:66ch;} li{margin:10px 0;}
+  ul{padding-left:22px;max-width:66ch;} li{margin:12px 0;}
   strong{color:var(--p);font-weight:700;}
   em{color:var(--s);}
   a{color:var(--accent);}
   .subtitle{color:var(--s);font-size:.78em;margin:0 0 18px;letter-spacing:.02em;}
   .kicker{color:var(--accent);font-size:.72em;font-weight:700;text-transform:uppercase;
      letter-spacing:.12em;margin:0 0 6px;}
+
+  /* ---- key-word highlight ---- */
+  .kw{background:var(--hibg);color:var(--hitext);padding:0 4px;border-radius:3px;
+      font-weight:700;}
+
+  /* ---- controls ---- */
   .bar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px;}
   .bar button{background:var(--surface);color:var(--p);border:1px solid var(--line);
      border-radius:999px;padding:7px 15px;font-size:.72em;font-family:inherit;cursor:pointer;
      letter-spacing:.02em;}
   .bar button:hover{border-color:var(--accent);color:var(--accent);}
+
   details.howto{background:var(--surface);border:1px solid var(--line);border-radius:12px;
      padding:6px 18px;margin:0 0 26px;}
   details.howto summary{cursor:pointer;font-weight:600;font-size:.85em;padding:10px 0;
      color:var(--s);letter-spacing:.02em;}
   details.howto[open] summary{color:var(--accent);}
   details.howto ul{margin:.2em 0 14px;font-size:.88em;}
+
+  /* ---- encased sections ---- */
+  section.block{margin:34px 0 10px;}
+  .band{color:var(--bandtext);border-radius:12px 12px 0 0;padding:12px 18px;font-size:1.02em;
+     font-weight:700;letter-spacing:0;line-height:1.35;}
+  .band .n{font-size:.85em;opacity:.85;font-weight:800;margin-right:8px;}
+  .body{background:var(--card);border:2px solid var(--line);border-top:none;
+     border-radius:0 0 12px 12px;padding:4px 20px 18px;}
+  .body > *:first-child{margin-top:14px;}
+  .person .band{background:var(--person);} .person .body{border-color:var(--person);}
+  .way    .band{background:var(--way);}    .way    .body{border-color:var(--way);}
+  .truth  .band{background:var(--truth);}  .truth  .body{border-color:var(--truth);}
+  .life   .band{background:var(--life);}   .life   .body{border-color:var(--life);}
+
+  /* ---- callouts ---- */
   .callout{background:var(--surface);border-left:4px solid var(--accent);border-radius:8px;
      padding:16px 20px;margin:22px 0;}
   .callout .kt{font-size:1em;font-style:italic;}
@@ -51,28 +74,36 @@
      padding:12px 18px;margin:14px 0;font-size:.94em;}
   .heart b{color:var(--good);text-transform:uppercase;font-size:.76em;letter-spacing:.1em;
      display:block;margin-bottom:3px;}
+
+  /* ---- scripture ---- */
   .verse{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--good);
      border-radius:8px;padding:12px 18px;margin:16px 0;}
   .verse .cite{display:block;font-size:.68em;font-weight:700;letter-spacing:.09em;
      text-transform:uppercase;color:var(--good);margin-bottom:5px;}
   .verse p{margin:0;font-style:italic;font-size:.95em;}
+  .scrip{background:var(--scripture);border-left:5px solid var(--scripborder);border-radius:8px;
+     padding:9px 14px;margin:8px 0 4px;font-size:.84em;line-height:1.6;}
+  .scrip .ref{font-weight:700;display:inline-block;margin-right:4px;}
   .cite{font-size:.78em;opacity:.75;white-space:nowrap;letter-spacing:0;word-spacing:normal;}
   .cite a{color:var(--accent);}
   a.scripture{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent);
      cursor:pointer;white-space:nowrap;}
   a.scripture:hover{border-bottom-style:solid;}
   .verse .cite a.scripture{color:var(--good);border-bottom-color:var(--good);}
+  .scrip a.scripture{border-bottom-color:var(--scripborder);}
+
   table{border-collapse:collapse;width:100%;margin:16px 0;font-size:.82em;}
   th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;}
   th{background:var(--surface);color:var(--s);font-weight:700;}
   .ref{color:var(--accent);}
+
   .tl-wrap{margin:20px 0 10px;}
   .tl-head{font-size:.72em;text-transform:uppercase;letter-spacing:.09em;color:var(--s);margin:0 0 14px;}
   .timeline{position:relative;padding-left:6px;}
   .timeline:before{content:"";position:absolute;left:12px;top:8px;bottom:14px;width:2px;background:var(--line);}
   .tl-item{position:relative;padding:6px 0 6px 36px;}
   .tl-dot{position:absolute;left:6px;top:12px;width:13px;height:13px;border-radius:50%;
-     background:var(--muted);border:2px solid var(--bg);box-shadow:0 0 0 1px var(--line);}
+     background:var(--muted);border:2px solid var(--card);box-shadow:0 0 0 1px var(--line);}
   .tl-item.key .tl-dot{background:var(--accent);box-shadow:0 0 0 1px var(--accent);}
   .tl-item.future .tl-dot{background:var(--good);box-shadow:0 0 0 1px var(--good);}
   .tl-date{font-weight:700;font-size:.8em;white-space:nowrap;}
@@ -82,10 +113,14 @@
   .tl-item.key .tl-ev strong{color:var(--p);}
   .tl-legend{font-size:.72em;color:var(--muted);margin:14px 0 0 6px;}
   .tl-legend .k{color:var(--accent);} .tl-legend .f{color:var(--good);}
+
   .note{color:var(--s);font-size:.82em;}
   .foot{color:var(--muted);font-size:.74em;margin-top:48px;border-top:1px solid var(--line);padding-top:18px;}
   ol.src{font-size:.82em;color:var(--s);} ol.src li{margin:7px 0;}
-  @media(max-width:640px){main{padding:20px 16px 70px;} table{font-size:.78em;}}
+  h2.plain{font-size:1.05em;font-weight:700;margin:38px 0 10px;padding-top:16px;
+     border-top:1px solid var(--line);letter-spacing:0;}
+  @media(max-width:640px){main{padding:20px 16px 70px;} table{font-size:.78em;}
+     .body{padding:4px 14px 16px;}}
 </style>
 </head>
 <body>
@@ -105,10 +140,11 @@
 <details class="howto">
   <summary>How to use these notes</summary>
   <ul>
-    <li>The four big headings are the <strong>questions</strong> &mdash; read the heading first, then look for the answer underneath.</li>
-    <li>Take one section at a time. There is no prize for finishing fast.</li>
+    <li>The four coloured headings are the <strong>questions</strong> &mdash; read the heading first, then look for the answer in the box underneath.</li>
+    <li><span class="kw">Highlighted words</span> are the ones worth remembering. If you read nothing else, read those.</li>
+    <li>Take one box at a time. There is no prize for finishing fast.</li>
     <li>Blue dotted words are <strong>scripture links</strong>. Tap one to open the verse.</li>
-    <li>Green boxes are the <strong>exact Bible wording</strong>. Everything else is explanation.</li>
+    <li>Cream boxes are the <strong>exact Bible wording</strong>. Everything else is explanation.</li>
     <li>Use the buttons above to make the text bigger or add more space between words.</li>
   </ul>
 </details>
@@ -122,11 +158,11 @@
   <p style="margin:0"><strong>Focus.</strong> Joseph was young, far from home, and the only person who would ever have known. He said no &mdash; not once, but day after day &mdash; and when saying no stopped working, he ran.</p>
 </div>
 
-<h2><span class="num">1.</span>Create context &mdash; when, who, and what was going on</h2>
-
+<section class="block person">
+  <div class="band"><span class="n">1.</span>Create context &mdash; when, who, and what was going on</div>
+  <div class="body">
 <h3>When</h3>
-
-<p>Joseph was 17 when his brothers sold him&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 37:2">Gen. 37:2</a>)</span>, which places that in <strong>1750 BCE</strong>. He was 30 when he stood before Pharaoh&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 41:46">Gen. 41:46</a>)</span>, in <strong>1737 BCE</strong>. The events of Genesis 39 fall in the years between &mdash; so he was somewhere in his late teens or twenties, alone in a foreign country.</p><p>Two features of his situation are worth naming. He was a slave, so refusing his master's wife carried obvious danger. And he was completely without family oversight &mdash; no father, no community, nobody from home who would ever hear about it.</p>
+<p>Joseph was 17 when his brothers sold him&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 37:2">Gen. 37:2</a>)</span>, placing that in <strong>1750 BCE</strong>. He was 30 when he stood before Pharaoh&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 41:46">Gen. 41:46</a>)</span>, in <strong>1737 BCE</strong>. Genesis 39 falls in the years between.</p><p>Two features of his situation matter. He was a slave, so refusing his master's wife carried obvious danger. And he was <span class="kw">completely without family oversight</span> &mdash; no father, no community, nobody from home who would ever hear about it.</p>
 
 <div class="tl-wrap">
   <p class="tl-head">Timeline &mdash; thirteen years from pit to palace</p>
@@ -143,54 +179,81 @@
 </div>
 
 <h3>Who</h3>
-
 <table>
   <tr><th>Person</th><th>Who they were</th></tr>
   <tr><td>Potiphar</td><td>His Egyptian master, who left everything in Joseph's care&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:6">Gen. 39:6</a>)</span>.</td></tr>
   <tr><td>Potiphar's wife</td><td>The source of daily, sustained pressure&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:10">Gen. 39:10</a>)</span>.</td></tr>
   <tr><td>The chief officer of the prison</td><td>Who came to trust Joseph completely&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:22">Gen. 39:22</a>)</span>.</td></tr>
-  <tr><td>Jehovah</td><td>Named four times in the chapter as being with Joseph &mdash; in the house <em>and</em> in the prison.</td></tr>
+  <tr><td>Jehovah</td><td>Named repeatedly in the chapter as being with Joseph &mdash; in the house <em>and</em> in the prison.</td></tr>
 </table>
 
 <h3>What was going on</h3>
+<p>Genesis establishes that Joseph was doing well before the trouble started. &ldquo;Jehovah was with Joseph. As a result, he became successful&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:2">Gen. 39:2</a>)</span>, and Potiphar &ldquo;left everything that was his in Joseph's care&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:6">Gen. 39:6</a>)</span>.</p><p>Which is exactly what made the temptation dangerous. He had access, privacy and authority. And the pressure was not a single dramatic moment &mdash; &ldquo;<span class="kw">day after day</span> she spoke to Joseph&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:10">Gen. 39:10</a>)</span>. This was a campaign, not an incident.</p>
+  </div>
+</section>
 
-<p>Genesis is careful to establish that Joseph was doing well before the trouble started. &ldquo;Jehovah was with Joseph. As a result, he became successful&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:2">Gen. 39:2</a>)</span>, and Potiphar &ldquo;left everything that was his in Joseph's care&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:6">Gen. 39:6</a>)</span>. He had earned real trust.</p><p>Which is exactly what made the temptation dangerous. He had access, privacy and authority. And the pressure was not a single dramatic moment &mdash; &ldquo;day after day she spoke to Joseph&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:10">Gen. 39:10</a>)</span>. This was a campaign, not an incident.</p>
-
-<h2><span class="num">2.</span>What was Jehovah&rsquo;s view of the situation?</h2>
-
-<div class="heart"><b>Heart of it</b>Jehovah's presence is the refrain of the whole chapter &mdash; and it does not stop when Joseph is punished for doing right.</div><p><strong>God was with him in the house.</strong> The chapter opens with it twice: &ldquo;Jehovah was with Joseph&rdquo; and &ldquo;his master saw that Jehovah was with him&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:2, 3">Gen. 39:2, 3</a>)</span>. Even an Egyptian idolater could see it.</p><p><strong>God was still with him in prison.</strong> This is the striking part. Joseph did the right thing and was jailed for it &mdash; and the account immediately says: &ldquo;But Jehovah continued with Joseph and kept showing loyal love to him&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:21">Gen. 39:21</a>)</span>. The blessing did not depend on the circumstances improving.</p><div class="verse">
+<section class="block truth">
+  <div class="band"><span class="n">2.</span>What was Jehovah&rsquo;s view of the situation?</div>
+  <div class="body">
+<div class="heart"><b>Heart of it</b>Jehovah's presence is the refrain of the whole chapter &mdash; and it does not stop when Joseph is punished for doing right.</div><p><strong>God was with him in the house</strong>&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:2, 3">Gen. 39:2, 3</a>)</span>. Even an Egyptian idolater could see it.</p><p><strong>God was still with him in prison.</strong> This is the striking part. Joseph did the right thing and was jailed for it &mdash; and the account immediately says Jehovah &ldquo;<span class="kw">continued with Joseph</span>&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:21">Gen. 39:21</a>)</span>. The blessing did not depend on the circumstances improving.</p><div class="verse">
   <span class="cite"><a class="scripture" data-q="Genesis 39:21">Genesis 39:21</a></span>
   <p>&ldquo;But Jehovah continued with Joseph and kept showing loyal love to him and granting him favor in the eyes of the chief officer of the prison.&rdquo;</p>
-</div><p><strong>He shared Joseph's view of what was at stake.</strong> Joseph called it &ldquo;this great badness&rdquo; and a sin &ldquo;against God&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:9">Gen. 39:9</a>)</span>. He understood that the primary injured party would be Jehovah, not Potiphar.</p>
+</div><p><strong>He shared Joseph's view of what was at stake.</strong> Joseph called it a sin &ldquo;against God&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:9">Gen. 39:9</a>)</span>. He understood that the primary injured party would be Jehovah, not Potiphar.</p>
+  </div>
+</section>
 
-<h2><span class="num">3.</span>What was Joseph doing &mdash; and how did he cope?</h2>
-
-<div class="heart"><b>Heart of it</b>He had worked out his answer before he needed it &mdash; and when reasoning was no longer enough, he left the building.</div><p><strong>He refused, and gave his reasons.</strong> The reply in verses 8 and 9 is not a panicked no. It is an argument: his master trusted him completely, the one thing withheld was his wife, and betraying that would be a sin against God&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:8, 9">Gen. 39:8, 9</a>)</span>. He had thought this through beforehand.</p><p><strong>He named the real offence.</strong> He could have said it would be unfair to Potiphar &mdash; true, but secondary. He said &ldquo;sin against God.&rdquo; That is the category that held when nobody else was watching.</p><p><strong>He kept refusing.</strong> &ldquo;So day after day she spoke to Joseph, but he never consented to lie with her <em>or to remain with her</em>&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:10">Gen. 39:10</a>)</span>. Note the second half. He also avoided being alone in her company &mdash; he managed the situation, not just the moment.</p><p><strong>He ran.</strong> When it became physical, he did not stay to argue: &ldquo;he left his garment in her hand and fled outside&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:12">Gen. 39:12</a>)</span>. He accepted looking ridiculous, and losing the clothing that would be used as evidence against him, rather than stay one second longer.</p><p><strong>He kept working afterwards.</strong> In prison he did not sulk. Before long &ldquo;the chief officer of the prison put Joseph in charge of all the prisoners&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:22">Gen. 39:22</a>)</span>.</p><h3>How did he cope?</h3><ul>
-  <li><strong>He had decided in advance.</strong> The speed and clarity of his answer show a conclusion already reached.</li>
-  <li><strong>He kept God in the picture.</strong> Being far from family did not mean being unobserved.</li>
-  <li><strong>He removed himself.</strong> Refusing to &ldquo;remain with her&rdquo; is practical avoidance, not just willpower.</li>
-  <li><strong>He did not let injustice make him bitter.</strong> The record of his conduct in prison is identical to his conduct in the house.</li>
+<section class="block way">
+  <div class="band"><span class="n">3.</span>What was Joseph doing &mdash; and how did he cope?</div>
+  <div class="body">
+<div class="heart"><b>Heart of it</b>He had worked out his answer <span class="kw">before he needed it</span> &mdash; and when reasoning was no longer enough, he left the building.</div><p><strong>He refused, and gave his reasons.</strong> The reply is not a panicked no. It is an argument&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:8, 9">Gen. 39:8, 9</a>)</span>. He had thought this through beforehand.</p><p><strong>He named the real offence.</strong> He could have said it would be unfair to Potiphar &mdash; true, but secondary. He said &ldquo;sin against God.&rdquo; That is the category that held when nobody else was watching.</p><p><strong>He kept refusing.</strong> &ldquo;he never consented to lie with her <em>or to remain with her</em>&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:10">Gen. 39:10</a>)</span>. Note the second half. He managed the situation, not just the moment.</p><p><strong>He ran.</strong> &ldquo;he left his garment in her hand and <span class="kw">fled outside</span>&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 39:12">Gen. 39:12</a>)</span>. He accepted looking ridiculous, and losing the clothing that would be used as evidence against him, rather than stay one second longer.</p><h3>How did he cope?</h3><ul>
+  <li><strong>He guarded his heart in advance.</strong> The decision was made long before the opportunity arrived.
+    <div class="scrip"><a class="scripture ref" data-q="Proverbs 4:23">Proverbs 4:23</a> &mdash; &ldquo;Above all the things that you guard, safeguard your heart, For out of it are the sources of life.&rdquo;</div>
+  </li>
+  <li><strong>He had settled what he would not look at.</strong> Job describes the same deliberate, prior commitment.
+    <div class="scrip"><a class="scripture ref" data-q="Job 31:1">Job 31:1</a> &mdash; &ldquo;I have made a covenant with my eyes. So how could I show improper attention to a virgin?&rdquo;</div>
+  </li>
+  <li><strong>He fled rather than negotiated.</strong> The Bible's counsel on this temptation is not to stand and reason but to leave.
+    <div class="scrip"><a class="scripture ref" data-q="1 Corinthians 6:18">1 Corinthians 6:18</a> &mdash; &ldquo;Flee from sexual immorality! Every other sin that a man may commit is outside his body, but whoever practices sexual immorality is sinning against his own body.&rdquo;</div>
+  </li>
+  <li><strong>He took the way out.</strong> The open door was there, and he went through it instead of lingering.
+    <div class="scrip"><a class="scripture ref" data-q="1 Corinthians 10:13">1 Corinthians 10:13</a> &mdash; &ldquo;But God is faithful, and he will not let you be tempted beyond what you can bear, but along with the temptation he will also make the way out so that you may be able to endure it.&rdquo;</div>
+  </li>
 </ul>
+  </div>
+</section>
 
-<h2><span class="num">4.</span>How can this account benefit me today?</h2>
-
-<div class="heart"><b>Heart of it</b>Decide before. Then, when the moment comes, you are executing a decision rather than making one.</div>
+<section class="block life">
+  <div class="band"><span class="n">4.</span>How can this account benefit me today?</div>
+  <div class="body">
+<div class="heart"><b>Heart of it</b>Decide before. Then, when the moment comes, you are <span class="kw">executing a decision</span> rather than making one.</div>
 
 <ul>
-  <li><strong>Settle the question in advance.</strong> Joseph was not weighing options in the moment. Anyone deciding at the point of temptation is deciding at their weakest.</li>
+  <li><strong>Settle the question in advance.</strong> Anyone deciding at the point of temptation is deciding at their weakest.
+    <div class="scrip"><a class="scripture ref" data-q="Proverbs 4:23">Proverbs 4:23</a> &mdash; &ldquo;Above all the things that you guard, safeguard your heart, For out of it are the sources of life.&rdquo;</div>
+  </li>
+  <li><strong>Running away is allowed.</strong> Fleeing is not cowardice when the alternative is negotiating with something that should not be negotiated with.
+    <div class="scrip"><a class="scripture ref" data-q="2 Timothy 2:22">2 Timothy 2:22</a> &mdash; &ldquo;So flee from youthful desires, but pursue righteousness, faith, love, peace, along with those who call on the Lord out of a clean heart.&rdquo;</div>
+  </li>
+  <li><strong>There is always a way out.</strong> Joseph's was a door. Yours may be a different room, a different app, a different friendship &mdash; but it exists.
+    <div class="scrip"><a class="scripture ref" data-q="1 Corinthians 10:13">1 Corinthians 10:13</a> &mdash; &ldquo;But God is faithful, and he will not let you be tempted beyond what you can bear, but along with the temptation he will also make the way out so that you may be able to endure it.&rdquo;</div>
+  </li>
+  <li><strong>Sometimes the right thing costs you.</strong> Joseph went from steward to prisoner for doing right, and the account does not pretend otherwise.
+    <div class="scrip"><a class="scripture ref" data-q="1 Peter 3:14">1 Peter 3:14</a> &mdash; &ldquo;But even if you should suffer for the sake of righteousness, you are happy. However, do not fear what they fear, nor be disturbed.&rdquo;</div>
+  </li>
+  <li><strong>Jehovah stays with you in the consequences.</strong> The same passage that describes his imprisonment describes God's loyal love.
+    <div class="scrip"><a class="scripture ref" data-q="Genesis 39:23">Genesis 39:23</a> &mdash; &ldquo;for Jehovah was with Joseph and Jehovah made whatever he did successful.&rdquo;</div>
+  </li>
   <li><strong>Name the real issue.</strong> &ldquo;Sin against God&rdquo; is a category that holds when nobody would find out and nobody would be hurt.</li>
-  <li><strong>Pressure that repeats needs an answer that repeats.</strong> Day after day. A single firm no is not the same as a settled position.</li>
-  <li><strong>Avoid the situation, not just the act.</strong> He would not even remain in her company. That is not weakness; it is strategy.</li>
-  <li><strong>Sometimes the right thing costs you.</strong> Joseph went from steward to prisoner for doing right, and the account does not pretend otherwise.</li>
-  <li><strong>Jehovah stays with you in the consequences.</strong> The same sentence that describes his imprisonment describes God's loyal love. That is the point of the chapter.</li>
-  <li><strong>Running away is allowed.</strong> Fleeing is not cowardice when the alternative is negotiating with something that should not be negotiated with.</li>
+  <li><strong>Pressure that repeats needs an answer that repeats.</strong> A single firm no is not the same as a settled position.</li>
 </ul>
 
 <div class="callout focus">
   <p style="margin:0"><strong>Ask yourself:</strong> What have I already decided about, in advance &mdash; and where am I still planning to work it out in the moment?</p>
 </div>
+  </div>
+</section>
 
-<h2>Key passages <span class="note">(New World Translation)</span></h2>
+<h2 class="plain">Key passages <span class="note">(New World Translation)</span></h2>
 
 <div class="verse">
   <span class="cite"><a class="scripture" data-q="Genesis 39:9">Genesis 39:9</a></span>
@@ -212,7 +275,7 @@
   <p>&ldquo;The chief officer of the prison was looking after absolutely nothing that was in Joseph's care, for Jehovah was with Joseph and Jehovah made whatever he did successful.&rdquo;</p>
 </div>
 
-<h2>Sources</h2>
+<h2 class="plain">Sources</h2>
 <ol class="src">
   <li><em>Walk Courageously With God</em> (wcg), chapter 8, &ldquo;JOSEPH &mdash; He Resisted Temptation&rdquo;</li>
   <li>Bible text: <em>New World Translation of the Holy Scriptures</em> (2013 Revision).</li>

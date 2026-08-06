@@ -7,41 +7,64 @@
 <title>Sarah - She Refused to Look Back (Walk Courageously With God, ch. 3)</title>
 <style>
   :root{--p:#E8E6E0;--s:#B4B2A9;--muted:#9C9A92;--line:#3A3A38;--bg:#14161a;--surface:#1E2126;
-    --accent:#85B7EB;--warning:#EF9F27;--danger:#F09595;--good:#9BD19B;--purple:#C3A8E8;
+    --card:#1A1D22;--accent:#85B7EB;--good:#9BD19B;--purple:#C3A8E8;
+    --person:#4db3aa;--way:#e0983f;--truth:#a884d6;--life:#5cb56e;--bandtext:#14161a;
+    --scripture:#262a31;--scripborder:#6b5d3a;--hibg:#3b3418;--hitext:#ffe08a;
     --fs:19px;--ws:0.03em;--ls:0.01em;}
   html[data-theme="light"]{--p:#1B1B1A;--s:#4A4A47;--muted:#6B6B67;--line:#D6D3CC;--bg:#FBF9F4;
-    --surface:#F1EEE6;--accent:#1F5FA8;--good:#2F7A3F;--purple:#6B4CA0;--warning:#9A6200;}
+    --surface:#F1EEE6;--card:#FFFFFF;--accent:#1F5FA8;--good:#2F7A3F;--purple:#6B4CA0;
+    --person:#2e6f6a;--way:#b5651d;--truth:#6a4c93;--life:#2f6d3c;--bandtext:#ffffff;
+    --scripture:#f3ecd8;--scripborder:#cdbf98;--hibg:#fff4cf;--hitext:#2b2b33;}
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--p);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.7;font-size:var(--fs);word-spacing:var(--ws);letter-spacing:var(--ls);
     text-align:left;}
-  main{max-width:780px;margin:0 auto;padding:28px 22px 80px;}
+  main{max-width:800px;margin:0 auto;padding:28px 22px 80px;}
   h1{font-size:1.42em;font-weight:600;line-height:1.3;margin:0 0 6px;letter-spacing:0;}
-  h2{font-size:1.1em;font-weight:600;margin:38px 0 10px;padding-top:16px;
-     border-top:1px solid var(--line);letter-spacing:0;}
-  h2 .num{color:var(--accent);font-weight:700;margin-right:10px;}
-  h3{font-size:.92em;font-weight:600;margin:22px 0 4px;color:var(--s);
-     text-transform:uppercase;letter-spacing:.06em;}
+  h3{font-size:.9em;font-weight:700;margin:22px 0 4px;color:var(--s);
+     text-transform:uppercase;letter-spacing:.07em;}
   p{margin:14px 0;max-width:66ch;}
-  ul{padding-left:22px;max-width:66ch;} li{margin:10px 0;}
+  ul{padding-left:22px;max-width:66ch;} li{margin:12px 0;}
   strong{color:var(--p);font-weight:700;}
   em{color:var(--s);}
   a{color:var(--accent);}
   .subtitle{color:var(--s);font-size:.78em;margin:0 0 18px;letter-spacing:.02em;}
   .kicker{color:var(--accent);font-size:.72em;font-weight:700;text-transform:uppercase;
      letter-spacing:.12em;margin:0 0 6px;}
+
+  /* ---- key-word highlight ---- */
+  .kw{background:var(--hibg);color:var(--hitext);padding:0 4px;border-radius:3px;
+      font-weight:700;}
+
+  /* ---- controls ---- */
   .bar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px;}
   .bar button{background:var(--surface);color:var(--p);border:1px solid var(--line);
      border-radius:999px;padding:7px 15px;font-size:.72em;font-family:inherit;cursor:pointer;
      letter-spacing:.02em;}
   .bar button:hover{border-color:var(--accent);color:var(--accent);}
+
   details.howto{background:var(--surface);border:1px solid var(--line);border-radius:12px;
      padding:6px 18px;margin:0 0 26px;}
   details.howto summary{cursor:pointer;font-weight:600;font-size:.85em;padding:10px 0;
      color:var(--s);letter-spacing:.02em;}
   details.howto[open] summary{color:var(--accent);}
   details.howto ul{margin:.2em 0 14px;font-size:.88em;}
+
+  /* ---- encased sections ---- */
+  section.block{margin:34px 0 10px;}
+  .band{color:var(--bandtext);border-radius:12px 12px 0 0;padding:12px 18px;font-size:1.02em;
+     font-weight:700;letter-spacing:0;line-height:1.35;}
+  .band .n{font-size:.85em;opacity:.85;font-weight:800;margin-right:8px;}
+  .body{background:var(--card);border:2px solid var(--line);border-top:none;
+     border-radius:0 0 12px 12px;padding:4px 20px 18px;}
+  .body > *:first-child{margin-top:14px;}
+  .person .band{background:var(--person);} .person .body{border-color:var(--person);}
+  .way    .band{background:var(--way);}    .way    .body{border-color:var(--way);}
+  .truth  .band{background:var(--truth);}  .truth  .body{border-color:var(--truth);}
+  .life   .band{background:var(--life);}   .life   .body{border-color:var(--life);}
+
+  /* ---- callouts ---- */
   .callout{background:var(--surface);border-left:4px solid var(--accent);border-radius:8px;
      padding:16px 20px;margin:22px 0;}
   .callout .kt{font-size:1em;font-style:italic;}
@@ -51,28 +74,36 @@
      padding:12px 18px;margin:14px 0;font-size:.94em;}
   .heart b{color:var(--good);text-transform:uppercase;font-size:.76em;letter-spacing:.1em;
      display:block;margin-bottom:3px;}
+
+  /* ---- scripture ---- */
   .verse{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--good);
      border-radius:8px;padding:12px 18px;margin:16px 0;}
   .verse .cite{display:block;font-size:.68em;font-weight:700;letter-spacing:.09em;
      text-transform:uppercase;color:var(--good);margin-bottom:5px;}
   .verse p{margin:0;font-style:italic;font-size:.95em;}
+  .scrip{background:var(--scripture);border-left:5px solid var(--scripborder);border-radius:8px;
+     padding:9px 14px;margin:8px 0 4px;font-size:.84em;line-height:1.6;}
+  .scrip .ref{font-weight:700;display:inline-block;margin-right:4px;}
   .cite{font-size:.78em;opacity:.75;white-space:nowrap;letter-spacing:0;word-spacing:normal;}
   .cite a{color:var(--accent);}
   a.scripture{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent);
      cursor:pointer;white-space:nowrap;}
   a.scripture:hover{border-bottom-style:solid;}
   .verse .cite a.scripture{color:var(--good);border-bottom-color:var(--good);}
+  .scrip a.scripture{border-bottom-color:var(--scripborder);}
+
   table{border-collapse:collapse;width:100%;margin:16px 0;font-size:.82em;}
   th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;}
   th{background:var(--surface);color:var(--s);font-weight:700;}
   .ref{color:var(--accent);}
+
   .tl-wrap{margin:20px 0 10px;}
   .tl-head{font-size:.72em;text-transform:uppercase;letter-spacing:.09em;color:var(--s);margin:0 0 14px;}
   .timeline{position:relative;padding-left:6px;}
   .timeline:before{content:"";position:absolute;left:12px;top:8px;bottom:14px;width:2px;background:var(--line);}
   .tl-item{position:relative;padding:6px 0 6px 36px;}
   .tl-dot{position:absolute;left:6px;top:12px;width:13px;height:13px;border-radius:50%;
-     background:var(--muted);border:2px solid var(--bg);box-shadow:0 0 0 1px var(--line);}
+     background:var(--muted);border:2px solid var(--card);box-shadow:0 0 0 1px var(--line);}
   .tl-item.key .tl-dot{background:var(--accent);box-shadow:0 0 0 1px var(--accent);}
   .tl-item.future .tl-dot{background:var(--good);box-shadow:0 0 0 1px var(--good);}
   .tl-date{font-weight:700;font-size:.8em;white-space:nowrap;}
@@ -82,10 +113,14 @@
   .tl-item.key .tl-ev strong{color:var(--p);}
   .tl-legend{font-size:.72em;color:var(--muted);margin:14px 0 0 6px;}
   .tl-legend .k{color:var(--accent);} .tl-legend .f{color:var(--good);}
+
   .note{color:var(--s);font-size:.82em;}
   .foot{color:var(--muted);font-size:.74em;margin-top:48px;border-top:1px solid var(--line);padding-top:18px;}
   ol.src{font-size:.82em;color:var(--s);} ol.src li{margin:7px 0;}
-  @media(max-width:640px){main{padding:20px 16px 70px;} table{font-size:.78em;}}
+  h2.plain{font-size:1.05em;font-weight:700;margin:38px 0 10px;padding-top:16px;
+     border-top:1px solid var(--line);letter-spacing:0;}
+  @media(max-width:640px){main{padding:20px 16px 70px;} table{font-size:.78em;}
+     .body{padding:4px 14px 16px;}}
 </style>
 </head>
 <body>
@@ -105,10 +140,11 @@
 <details class="howto">
   <summary>How to use these notes</summary>
   <ul>
-    <li>The four big headings are the <strong>questions</strong> &mdash; read the heading first, then look for the answer underneath.</li>
-    <li>Take one section at a time. There is no prize for finishing fast.</li>
+    <li>The four coloured headings are the <strong>questions</strong> &mdash; read the heading first, then look for the answer in the box underneath.</li>
+    <li><span class="kw">Highlighted words</span> are the ones worth remembering. If you read nothing else, read those.</li>
+    <li>Take one box at a time. There is no prize for finishing fast.</li>
     <li>Blue dotted words are <strong>scripture links</strong>. Tap one to open the verse.</li>
-    <li>Green boxes are the <strong>exact Bible wording</strong>. Everything else is explanation.</li>
+    <li>Cream boxes are the <strong>exact Bible wording</strong>. Everything else is explanation.</li>
     <li>Use the buttons above to make the text bigger or add more space between words.</li>
   </ul>
 </details>
@@ -122,28 +158,27 @@
   <p style="margin:0"><strong>Focus.</strong> Sarah left a settled city for a tent and never went back &mdash; and the striking thing is that she could have. The road to Ur stayed open for over 60 years. Every year she did not take it was a decision.</p>
 </div>
 
-<h2><span class="num">1.</span>Create context &mdash; when, who, and what was going on</h2>
-
+<section class="block person">
+  <div class="band"><span class="n">1.</span>Create context &mdash; when, who, and what was going on</div>
+  <div class="body">
 <h3>When</h3>
-
-<p>Sarah was about ten years younger than Abraham&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 17:17">Gen. 17:17</a>)</span>, which places her birth around <strong>2008 BCE</strong>. She left Haran with Abraham in <strong>1943 BCE</strong>, when he was 75&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 12:4">Gen. 12:4</a>)</span> and she was about 65. She died at 127 in <strong>1881 BCE</strong>&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 23:1">Gen. 23:1</a>)</span>.</p><p>Hold on to the arithmetic, because it is the whole point of the chapter: Sarah lived as a foreigner in tents for <strong>62 years</strong>. Isaac was not born until she was 90 &nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 17:17">Gen. 17:17</a>)</span> &mdash; which means she waited roughly 25 years after leaving home before she saw the first small instalment of what she had been promised.</p>
+<p>Sarah was about ten years younger than Abraham&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 17:17">Gen. 17:17</a>)</span>, so she was born around <strong>2008 BCE</strong>. She left Haran in <strong>1943 BCE</strong> aged about 65, and died at 127 in <strong>1881 BCE</strong>&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 23:1">Gen. 23:1</a>)</span>.</p><p>Hold on to the arithmetic, because it is the whole point: Sarah lived as a foreigner in tents for <span class="kw">62 years</span>. Isaac was not born until she was 90 &mdash; roughly 25 years after leaving home before she saw the first instalment of what she had been promised.</p>
 
 <div class="tl-wrap">
   <p class="tl-head">Timeline &mdash; 62 years in tents</p>
   <div class="timeline">
     <div class="tl-item"><span class="tl-dot"></span><span class="tl-date">c. 2008 BCE</span> <span class="tl-ev">Sarah born, about ten years after Abraham.</span></div>
-    <div class="tl-item"><span class="tl-dot"></span><span class="tl-date">c. 1948 BCE</span> <span class="tl-ev">Terah's household leaves Ur of the Chaldeans and settles in Haran&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 11:31">Gen. 11:31</a>)</span>.</span></div>
-    <div class="tl-item key"><span class="tl-dot"></span><span class="tl-date">1943 BCE</span> <span class="tl-ev"><strong>They leave Haran for Canaan.</strong> Abraham is 75, Sarah about 65&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 12:4">Gen. 12:4</a>)</span>.</span></div>
+    <div class="tl-item"><span class="tl-dot"></span><span class="tl-date">c. 1948 BCE</span> <span class="tl-ev">Terah's household leaves Ur and settles in Haran&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 11:31">Gen. 11:31</a>)</span>.</span></div>
+    <div class="tl-item key"><span class="tl-dot"></span><span class="tl-date">1943 BCE</span> <span class="tl-ev"><strong>They leave Haran for Canaan.</strong> Abraham is 75&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 12:4">Gen. 12:4</a>)</span>.</span></div>
     <div class="tl-item"><span class="tl-dot"></span><span class="tl-date">1932 BCE</span> <span class="tl-ev">Ishmael born to Hagar &mdash; Sarah's attempt to solve the problem herself.</span></div>
-    <div class="tl-item key"><span class="tl-dot"></span><span class="tl-date">1919 BCE</span> <span class="tl-ev"><strong>Sarai becomes Sarah</strong> &mdash; &ldquo;princess.&rdquo; God promises she will bear a son&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 17:15, 16">Gen. 17:15, 16</a>)</span>.</span></div>
+    <div class="tl-item key"><span class="tl-dot"></span><span class="tl-date">1919 BCE</span> <span class="tl-ev"><strong>Sarai becomes Sarah</strong> &mdash; &ldquo;princess.&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 17:15, 16">Gen. 17:15, 16</a>)</span>.</span></div>
     <div class="tl-item future"><span class="tl-dot"></span><span class="tl-date">1918 BCE</span> <span class="tl-ev"><strong>Isaac born.</strong> Sarah is 90&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 21:2, 5">Gen. 21:2, 5</a>)</span>.</span></div>
-    <div class="tl-item"><span class="tl-dot"></span><span class="tl-date">1881 BCE</span> <span class="tl-ev">Sarah dies at 127 in Hebron; Abraham mourns her&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 23:1, 2">Gen. 23:1, 2</a>)</span>.</span></div>
+    <div class="tl-item"><span class="tl-dot"></span><span class="tl-date">1881 BCE</span> <span class="tl-ev">Sarah dies at 127 in Hebron&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 23:1, 2">Gen. 23:1, 2</a>)</span>.</span></div>
   </div>
   <p class="tl-legend"><span class="k">&#9679;</span> the events of this chapter &nbsp;&middot;&nbsp; <span class="f">&#9679;</span> outcome &nbsp;&middot;&nbsp; &#9679; surrounding history</p>
 </div>
 
 <h3>Who</h3>
-
 <table>
   <tr><th>Person</th><th>Who they were</th></tr>
   <tr><td>Abraham</td><td>Her husband, and the one who received the call to leave.</td></tr>
@@ -154,42 +189,66 @@
 </table>
 
 <h3>What was going on</h3>
+<p>Ur was not a village. It was a wealthy, literate, well-supplied city, and Sarah was leaving it for a portable life among strangers. Genesis flags her deepest sorrow before it tells us anything else about her: &ldquo;Now Sarai was <span class="kw">barren</span>; she had no child&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 11:30">Gen. 11:30</a>)</span>.</p><p>So the promise she was asked to believe &mdash; that a great nation would come from this family&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 12:2">Gen. 12:2</a>)</span> &mdash; struck directly at the one thing that had already failed. She was asked to leave security for a promise built on her <span class="kw">weakest point</span>.</p>
+  </div>
+</section>
 
-<p>Ur was not a village. It was a wealthy, literate, well-supplied city, and Sarah was leaving it for a portable life among strangers. Genesis flags her deepest sorrow before it tells us anything else about her: &ldquo;Now Sarai was barren; she had no child&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 11:30">Gen. 11:30</a>)</span>. In her culture, that was not merely a private grief; it carried public shame.</p><p>So the promise she was asked to believe &mdash; that a great nation would come from this family&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 12:2">Gen. 12:2</a>)</span> &mdash; struck directly at the one thing that had already failed. She was asked to leave security for a promise built on her weakest point.</p>
-
-<h2><span class="num">2.</span>What was Jehovah&rsquo;s view of the situation?</h2>
-
-<div class="heart"><b>Heart of it</b>Jehovah did not merely tolerate Sarah's presence on the journey. He renamed her, credited her with faith, and recorded her laughter without condemning her for it.</div><p><strong>He gave her a new name.</strong> &ldquo;You must not call her Sarai, because Sarah will become her name&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 17:15">Gen. 17:15</a>)</span>. The name means princess. In the same breath he said, &ldquo;she will become nations; kings of peoples will come from her&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 17:16">Gen. 17:16</a>)</span>. The promise was not made about her; it was made <em>to</em> her.</p><p><strong>He answered her laugh with a question, not a rebuke.</strong> When Sarah laughed to herself at the idea&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 18:12">Gen. 18:12</a>)</span>, Jehovah's reply was &ldquo;Is anything too extraordinary for Jehovah?&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 18:14">Gen. 18:14</a>)</span> That is a correction, but a gentle one &mdash; aimed at enlarging her view of God rather than shaming her.</p><div class="verse">
+<section class="block truth">
+  <div class="band"><span class="n">2.</span>What was Jehovah&rsquo;s view of the situation?</div>
+  <div class="body">
+<div class="heart"><b>Heart of it</b>Jehovah did not merely tolerate Sarah's presence on the journey. He renamed her, credited her with faith, and recorded her laughter without condemning her for it.</div><p><strong>He gave her a new name.</strong> &ldquo;Sarah will become her name&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 17:15">Gen. 17:15</a>)</span> &mdash; princess. In the same breath: &ldquo;she will become nations; kings of peoples will come from her&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 17:16">Gen. 17:16</a>)</span>. The promise was not made about her; it was made <em>to</em> her.</p><p><strong>He answered her laugh with a question, not a rebuke.</strong> &ldquo;Is anything <span class="kw">too extraordinary</span> for Jehovah?&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 18:14">Gen. 18:14</a>)</span> That is a correction aimed at enlarging her view of God rather than shaming her.</p><div class="verse">
   <span class="cite"><a class="scripture" data-q="Hebrews 11:11">Hebrews 11:11</a></span>
   <p>&ldquo;By faith also Sarah received power to conceive offspring, even when she was past the age, since she considered Him faithful who made the promise.&rdquo;</p>
-</div><p><strong>He counted her among the faithful.</strong> Centuries later Paul lists her by name, and Peter holds her up as a pattern for &ldquo;the holy women of the past who hoped in God&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="1 Peter 3:5">1 Pet. 3:5</a>)</span>. Hebrews says of that whole group that &ldquo;God is not ashamed of them, to be called on as their God&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Hebrews 11:16">Heb. 11:16</a>)</span>.</p>
+</div><p><strong>He counted her among the faithful.</strong> Peter holds her up as a pattern for &ldquo;the holy women of the past who hoped in God&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="1 Peter 3:5">1 Pet. 3:5</a>)</span>, and Hebrews says of that group that &ldquo;God is not ashamed of them, to be called on as their God&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Hebrews 11:16">Heb. 11:16</a>)</span>.</p>
+  </div>
+</section>
 
-<h2><span class="num">3.</span>What was Sarah doing &mdash; and how did she cope?</h2>
-
-<div class="heart"><b>Heart of it</b>She kept not going back. That sounds passive, but over 62 years it is one of the most demanding things a person can do.</div><p><strong>She went in the first place.</strong> Genesis records Abraham's call, but Sarah had to agree to a move with no destination named &mdash; &ldquo;to the land that I will show you&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 12:1">Gen. 12:1</a>)</span>. She packed for a journey whose endpoint nobody could tell her.</p><p><strong>She stayed gone.</strong> This is the argument Hebrews makes. If they had &ldquo;kept remembering the place from which they had departed, they would have had opportunity to return&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Hebrews 11:15">Heb. 11:15</a>)</span>. The door home was never locked. Sarah simply stopped looking at it.</p><p><strong>She got some things wrong.</strong> The Hagar arrangement was Sarah's idea, and it produced years of friction. Scripture does not tidy this up. Her faith is commended without her record being made spotless &mdash; which is itself encouraging.</p><h3>How did she cope?</h3><ul>
-  <li><strong>She judged the promise by the One who made it.</strong> Hebrews puts it precisely: she &ldquo;considered Him faithful who made the promise&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Hebrews 11:11">Heb. 11:11</a>)</span>. She did not assess the odds; she assessed God.</li>
-  <li><strong>She let herself be corrected.</strong> The laugh was real, and so was the change of mind afterwards.</li>
-  <li><strong>She kept a sense of humour.</strong> When Isaac finally arrived she said, &ldquo;God has brought me laughter; everybody hearing of it will laugh with me&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 21:6">Gen. 21:6</a>)</span>. The same laughter, transformed.</li>
-  <li><strong>She was not alone.</strong> She and Abraham carried this together for decades.</li>
+<section class="block way">
+  <div class="band"><span class="n">3.</span>What was Sarah doing &mdash; and how did she cope?</div>
+  <div class="body">
+<div class="heart"><b>Heart of it</b>She kept <span class="kw">not going back</span>. That sounds passive, but over 62 years it is one of the most demanding things a person can do.</div><p><strong>She went in the first place.</strong> She had to agree to a move with no destination named &mdash; &ldquo;to the land that I will show you&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 12:1">Gen. 12:1</a>)</span>. She packed for a journey whose endpoint nobody could tell her.</p><p><strong>She stayed gone.</strong> The door home was never locked&nbsp;<span class="cite">(<a class="scripture" data-q="Hebrews 11:15">Heb. 11:15</a>)</span>. Sarah simply stopped looking at it.</p><p><strong>She got some things wrong.</strong> The Hagar arrangement was Sarah's idea, and it produced years of friction. Scripture does not tidy this up &mdash; which is itself encouraging.</p><h3>How did she cope?</h3><ul>
+  <li><strong>She judged the promise by the One who made it.</strong> She &ldquo;considered Him faithful.&rdquo; Abraham is described the same way &mdash; convinced God was <span class="kw">able</span> to do what he had said.
+    <div class="scrip"><a class="scripture ref" data-q="Romans 4:20, 21">Romans 4:20, 21</a> &mdash; &ldquo;he did not waver in a lack of faith; but he became powerful by his faith, giving God glory and being fully convinced that what He had promised He was also able to do.&rdquo;</div>
+  </li>
+  <li><strong>She did not look behind her.</strong> Jesus later used exactly this picture for someone unfit for the work ahead.
+    <div class="scrip"><a class="scripture ref" data-q="Luke 9:62">Luke 9:62</a> &mdash; &ldquo;No man who has put his hand to a plow and looks at the things behind is well-suited for the Kingdom of God.&rdquo;</div>
+  </li>
+  <li><strong>She endured a very long wait.</strong> Twenty-five years between promise and fulfilment is a lifetime of practising three things at once.
+    <div class="scrip"><a class="scripture ref" data-q="Romans 12:12">Romans 12:12</a> &mdash; &ldquo;Rejoice in the hope. Endure under tribulation. Persevere in prayer.&rdquo;</div>
+  </li>
+  <li><strong>She kept a sense of humour.</strong> When Isaac arrived she said God had brought her laughter&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 21:6">Gen. 21:6</a>)</span>. The same laughter, transformed.</li>
 </ul>
+  </div>
+</section>
 
-<h2><span class="num">4.</span>How can this account benefit me today?</h2>
-
-<div class="heart"><b>Heart of it</b>The test is rarely the moment you leave. It is the sixty years afterwards when going back would still be easy.</div>
+<section class="block life">
+  <div class="band"><span class="n">4.</span>How can this account benefit me today?</div>
+  <div class="body">
+<div class="heart"><b>Heart of it</b>The test is rarely the moment you leave. It is the sixty years afterwards when <span class="kw">going back would still be easy</span>.</div>
 
 <ul>
-  <li><strong>Leaving is a decision you make repeatedly.</strong> Whatever you have walked away from &mdash; a career path, a crowd, a habit &mdash; the road back stays open. Not taking it, again and again, is the actual faithfulness.</li>
-  <li><strong>Homesickness is not failure.</strong> Hebrews does not say they never thought of home. It says they did not <em>keep</em> remembering it in a way that pulled them back. Feeling the pull and not following it is exactly the point.</li>
-  <li><strong>God's promises often land on your weakest spot.</strong> Sarah was barren and was promised nations. That is not cruelty; it is the place where God's power is most visible.</li>
-  <li><strong>Waiting is not wasted time.</strong> Twenty-five years passed between the promise and Isaac. Nothing in the record suggests those years were a detour.</li>
+  <li><strong>Leaving is a decision you make repeatedly.</strong> Whatever you walked away from, the road back stays open. Not taking it, again and again, is the actual faithfulness.
+    <div class="scrip"><a class="scripture ref" data-q="Luke 9:62">Luke 9:62</a> &mdash; &ldquo;No man who has put his hand to a plow and looks at the things behind is well-suited for the Kingdom of God.&rdquo;</div>
+  </li>
+  <li><strong>Homesickness is not failure.</strong> Hebrews does not say they never thought of home &mdash; only that they did not keep remembering it in a way that pulled them back.
+    <div class="scrip"><a class="scripture ref" data-q="Hebrews 11:16">Hebrews 11:16</a> &mdash; &ldquo;But now they are reaching out for a better place, that is, one belonging to heaven. Therefore, God is not ashamed of them, to be called on as their God, for he has prepared a city for them.&rdquo;</div>
+  </li>
+  <li><strong>God's promises often land on your weakest spot.</strong> Sarah was barren and was promised nations. That is where God's power is most visible.
+    <div class="scrip"><a class="scripture ref" data-q="2 Corinthians 12:9">2 Corinthians 12:9</a> &mdash; &ldquo;My undeserved kindness is sufficient for you, for my power is being made perfect in weakness.&rdquo;</div>
+  </li>
+  <li><strong>Waiting is not wasted time.</strong> Twenty-five years passed before Isaac. Nothing suggests those years were a detour.
+    <div class="scrip"><a class="scripture ref" data-q="James 1:3, 4">James 1:3, 4</a> &mdash; &ldquo;knowing as you do that this tested quality of your faith produces endurance. But let endurance complete its work, so that you may be complete and sound in all respects, not lacking in anything.&rdquo;</div>
+  </li>
   <li><strong>You can doubt and still be listed among the faithful.</strong> Sarah laughed. She is still in Hebrews 11. A moment of disbelief does not cancel a lifetime of trust.</li>
 </ul>
 
 <div class="callout focus">
   <p style="margin:0"><strong>Ask yourself:</strong> What is the &ldquo;Ur&rdquo; I keep glancing back at &mdash; and what would it cost me to stop looking?</p>
 </div>
+  </div>
+</section>
 
-<h2>Key passages <span class="note">(New World Translation)</span></h2>
+<h2 class="plain">Key passages <span class="note">(New World Translation)</span></h2>
 
 <div class="verse">
   <span class="cite"><a class="scripture" data-q="Genesis 12:1">Genesis 12:1</a></span>
@@ -211,7 +270,7 @@
   <p>&ldquo;Then Sarah said: &lsquo;God has brought me laughter; everybody hearing of it will laugh with me.&rsquo;&rdquo;</p>
 </div>
 
-<h2>Sources</h2>
+<h2 class="plain">Sources</h2>
 <ol class="src">
   <li><em>Walk Courageously With God</em> (wcg), chapter 3, &ldquo;SARAH &mdash; She Refused to Look Back&rdquo;</li>
   <li>Bible text: <em>New World Translation of the Holy Scriptures</em> (2013 Revision).</li>

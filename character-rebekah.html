@@ -7,41 +7,64 @@
 <title>Rebekah - She Ventured Into the Unknown (Walk Courageously With God, ch. 6)</title>
 <style>
   :root{--p:#E8E6E0;--s:#B4B2A9;--muted:#9C9A92;--line:#3A3A38;--bg:#14161a;--surface:#1E2126;
-    --accent:#85B7EB;--warning:#EF9F27;--danger:#F09595;--good:#9BD19B;--purple:#C3A8E8;
+    --card:#1A1D22;--accent:#85B7EB;--good:#9BD19B;--purple:#C3A8E8;
+    --person:#4db3aa;--way:#e0983f;--truth:#a884d6;--life:#5cb56e;--bandtext:#14161a;
+    --scripture:#262a31;--scripborder:#6b5d3a;--hibg:#3b3418;--hitext:#ffe08a;
     --fs:19px;--ws:0.03em;--ls:0.01em;}
   html[data-theme="light"]{--p:#1B1B1A;--s:#4A4A47;--muted:#6B6B67;--line:#D6D3CC;--bg:#FBF9F4;
-    --surface:#F1EEE6;--accent:#1F5FA8;--good:#2F7A3F;--purple:#6B4CA0;--warning:#9A6200;}
+    --surface:#F1EEE6;--card:#FFFFFF;--accent:#1F5FA8;--good:#2F7A3F;--purple:#6B4CA0;
+    --person:#2e6f6a;--way:#b5651d;--truth:#6a4c93;--life:#2f6d3c;--bandtext:#ffffff;
+    --scripture:#f3ecd8;--scripborder:#cdbf98;--hibg:#fff4cf;--hitext:#2b2b33;}
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--p);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.7;font-size:var(--fs);word-spacing:var(--ws);letter-spacing:var(--ls);
     text-align:left;}
-  main{max-width:780px;margin:0 auto;padding:28px 22px 80px;}
+  main{max-width:800px;margin:0 auto;padding:28px 22px 80px;}
   h1{font-size:1.42em;font-weight:600;line-height:1.3;margin:0 0 6px;letter-spacing:0;}
-  h2{font-size:1.1em;font-weight:600;margin:38px 0 10px;padding-top:16px;
-     border-top:1px solid var(--line);letter-spacing:0;}
-  h2 .num{color:var(--accent);font-weight:700;margin-right:10px;}
-  h3{font-size:.92em;font-weight:600;margin:22px 0 4px;color:var(--s);
-     text-transform:uppercase;letter-spacing:.06em;}
+  h3{font-size:.9em;font-weight:700;margin:22px 0 4px;color:var(--s);
+     text-transform:uppercase;letter-spacing:.07em;}
   p{margin:14px 0;max-width:66ch;}
-  ul{padding-left:22px;max-width:66ch;} li{margin:10px 0;}
+  ul{padding-left:22px;max-width:66ch;} li{margin:12px 0;}
   strong{color:var(--p);font-weight:700;}
   em{color:var(--s);}
   a{color:var(--accent);}
   .subtitle{color:var(--s);font-size:.78em;margin:0 0 18px;letter-spacing:.02em;}
   .kicker{color:var(--accent);font-size:.72em;font-weight:700;text-transform:uppercase;
      letter-spacing:.12em;margin:0 0 6px;}
+
+  /* ---- key-word highlight ---- */
+  .kw{background:var(--hibg);color:var(--hitext);padding:0 4px;border-radius:3px;
+      font-weight:700;}
+
+  /* ---- controls ---- */
   .bar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px;}
   .bar button{background:var(--surface);color:var(--p);border:1px solid var(--line);
      border-radius:999px;padding:7px 15px;font-size:.72em;font-family:inherit;cursor:pointer;
      letter-spacing:.02em;}
   .bar button:hover{border-color:var(--accent);color:var(--accent);}
+
   details.howto{background:var(--surface);border:1px solid var(--line);border-radius:12px;
      padding:6px 18px;margin:0 0 26px;}
   details.howto summary{cursor:pointer;font-weight:600;font-size:.85em;padding:10px 0;
      color:var(--s);letter-spacing:.02em;}
   details.howto[open] summary{color:var(--accent);}
   details.howto ul{margin:.2em 0 14px;font-size:.88em;}
+
+  /* ---- encased sections ---- */
+  section.block{margin:34px 0 10px;}
+  .band{color:var(--bandtext);border-radius:12px 12px 0 0;padding:12px 18px;font-size:1.02em;
+     font-weight:700;letter-spacing:0;line-height:1.35;}
+  .band .n{font-size:.85em;opacity:.85;font-weight:800;margin-right:8px;}
+  .body{background:var(--card);border:2px solid var(--line);border-top:none;
+     border-radius:0 0 12px 12px;padding:4px 20px 18px;}
+  .body > *:first-child{margin-top:14px;}
+  .person .band{background:var(--person);} .person .body{border-color:var(--person);}
+  .way    .band{background:var(--way);}    .way    .body{border-color:var(--way);}
+  .truth  .band{background:var(--truth);}  .truth  .body{border-color:var(--truth);}
+  .life   .band{background:var(--life);}   .life   .body{border-color:var(--life);}
+
+  /* ---- callouts ---- */
   .callout{background:var(--surface);border-left:4px solid var(--accent);border-radius:8px;
      padding:16px 20px;margin:22px 0;}
   .callout .kt{font-size:1em;font-style:italic;}
@@ -51,28 +74,36 @@
      padding:12px 18px;margin:14px 0;font-size:.94em;}
   .heart b{color:var(--good);text-transform:uppercase;font-size:.76em;letter-spacing:.1em;
      display:block;margin-bottom:3px;}
+
+  /* ---- scripture ---- */
   .verse{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--good);
      border-radius:8px;padding:12px 18px;margin:16px 0;}
   .verse .cite{display:block;font-size:.68em;font-weight:700;letter-spacing:.09em;
      text-transform:uppercase;color:var(--good);margin-bottom:5px;}
   .verse p{margin:0;font-style:italic;font-size:.95em;}
+  .scrip{background:var(--scripture);border-left:5px solid var(--scripborder);border-radius:8px;
+     padding:9px 14px;margin:8px 0 4px;font-size:.84em;line-height:1.6;}
+  .scrip .ref{font-weight:700;display:inline-block;margin-right:4px;}
   .cite{font-size:.78em;opacity:.75;white-space:nowrap;letter-spacing:0;word-spacing:normal;}
   .cite a{color:var(--accent);}
   a.scripture{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent);
      cursor:pointer;white-space:nowrap;}
   a.scripture:hover{border-bottom-style:solid;}
   .verse .cite a.scripture{color:var(--good);border-bottom-color:var(--good);}
+  .scrip a.scripture{border-bottom-color:var(--scripborder);}
+
   table{border-collapse:collapse;width:100%;margin:16px 0;font-size:.82em;}
   th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;}
   th{background:var(--surface);color:var(--s);font-weight:700;}
   .ref{color:var(--accent);}
+
   .tl-wrap{margin:20px 0 10px;}
   .tl-head{font-size:.72em;text-transform:uppercase;letter-spacing:.09em;color:var(--s);margin:0 0 14px;}
   .timeline{position:relative;padding-left:6px;}
   .timeline:before{content:"";position:absolute;left:12px;top:8px;bottom:14px;width:2px;background:var(--line);}
   .tl-item{position:relative;padding:6px 0 6px 36px;}
   .tl-dot{position:absolute;left:6px;top:12px;width:13px;height:13px;border-radius:50%;
-     background:var(--muted);border:2px solid var(--bg);box-shadow:0 0 0 1px var(--line);}
+     background:var(--muted);border:2px solid var(--card);box-shadow:0 0 0 1px var(--line);}
   .tl-item.key .tl-dot{background:var(--accent);box-shadow:0 0 0 1px var(--accent);}
   .tl-item.future .tl-dot{background:var(--good);box-shadow:0 0 0 1px var(--good);}
   .tl-date{font-weight:700;font-size:.8em;white-space:nowrap;}
@@ -82,10 +113,14 @@
   .tl-item.key .tl-ev strong{color:var(--p);}
   .tl-legend{font-size:.72em;color:var(--muted);margin:14px 0 0 6px;}
   .tl-legend .k{color:var(--accent);} .tl-legend .f{color:var(--good);}
+
   .note{color:var(--s);font-size:.82em;}
   .foot{color:var(--muted);font-size:.74em;margin-top:48px;border-top:1px solid var(--line);padding-top:18px;}
   ol.src{font-size:.82em;color:var(--s);} ol.src li{margin:7px 0;}
-  @media(max-width:640px){main{padding:20px 16px 70px;} table{font-size:.78em;}}
+  h2.plain{font-size:1.05em;font-weight:700;margin:38px 0 10px;padding-top:16px;
+     border-top:1px solid var(--line);letter-spacing:0;}
+  @media(max-width:640px){main{padding:20px 16px 70px;} table{font-size:.78em;}
+     .body{padding:4px 14px 16px;}}
 </style>
 </head>
 <body>
@@ -105,10 +140,11 @@
 <details class="howto">
   <summary>How to use these notes</summary>
   <ul>
-    <li>The four big headings are the <strong>questions</strong> &mdash; read the heading first, then look for the answer underneath.</li>
-    <li>Take one section at a time. There is no prize for finishing fast.</li>
+    <li>The four coloured headings are the <strong>questions</strong> &mdash; read the heading first, then look for the answer in the box underneath.</li>
+    <li><span class="kw">Highlighted words</span> are the ones worth remembering. If you read nothing else, read those.</li>
+    <li>Take one box at a time. There is no prize for finishing fast.</li>
     <li>Blue dotted words are <strong>scripture links</strong>. Tap one to open the verse.</li>
-    <li>Green boxes are the <strong>exact Bible wording</strong>. Everything else is explanation.</li>
+    <li>Cream boxes are the <strong>exact Bible wording</strong>. Everything else is explanation.</li>
     <li>Use the buttons above to make the text bigger or add more space between words.</li>
   </ul>
 </details>
@@ -122,11 +158,11 @@
   <p style="margin:0"><strong>Focus.</strong> A young woman is asked whether she will leave her family for a country she has never seen, to marry a man she has never met. She is given no time to think. Her answer is four words long, and it changed the line that led to the Messiah.</p>
 </div>
 
-<h2><span class="num">1.</span>Create context &mdash; when, who, and what was going on</h2>
-
+<section class="block person">
+  <div class="band"><span class="n">1.</span>Create context &mdash; when, who, and what was going on</div>
+  <div class="body">
 <h3>When</h3>
-
-<p>Isaac was 40 when he married Rebekah&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 25:20">Gen. 25:20</a>)</span>, which places this in <strong>1878 BCE</strong>. Sarah had died three years earlier, and Genesis notes that &ldquo;Isaac found comfort after the loss of his mother&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:67">Gen. 24:67</a>)</span>.</p><p>Rebekah lived in Paddan-aram, several hundred miles north-east of Canaan. Leaving meant she would in all likelihood never see her family again. There were no visits home. The account gives no hint that she ever did.</p>
+<p>Isaac was 40 when he married Rebekah&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 25:20">Gen. 25:20</a>)</span>, which places this in <strong>1878 BCE</strong>. Sarah had died three years earlier, and Genesis notes that &ldquo;Isaac found comfort after the loss of his mother&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:67">Gen. 24:67</a>)</span>.</p><p>Rebekah lived in Paddan-aram, several hundred miles north-east of Canaan. Leaving meant she would in all likelihood <span class="kw">never see her family again</span>.</p>
 
 <div class="tl-wrap">
   <p class="tl-head">Timeline &mdash; a decision made in a day</p>
@@ -134,61 +170,85 @@
     <div class="tl-item"><span class="tl-dot"></span><span class="tl-date">1918 BCE</span> <span class="tl-ev">Isaac born to Abraham and Sarah&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 21:5">Gen. 21:5</a>)</span>.</span></div>
     <div class="tl-item"><span class="tl-dot"></span><span class="tl-date">1881 BCE</span> <span class="tl-ev">Sarah dies at 127&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 23:1">Gen. 23:1</a>)</span>.</span></div>
     <div class="tl-item key"><span class="tl-dot"></span><span class="tl-date">1878 BCE</span> <span class="tl-ev"><strong>Abraham's servant travels to Paddan-aram</strong> to find a wife for Isaac.</span></div>
-    <div class="tl-item key"><span class="tl-dot"></span><span class="tl-date">1878 BCE</span> <span class="tl-ev"><strong>Rebekah waters ten camels</strong> for a stranger, unasked&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:19, 20">Gen. 24:19, 20</a>)</span>.</span></div>
-    <div class="tl-item key"><span class="tl-dot"></span><span class="tl-date">1878 BCE</span> <span class="tl-ev"><strong>&ldquo;I am willing to go.&rdquo;</strong> She leaves the same day&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:58">Gen. 24:58</a>)</span>.</span></div>
+    <div class="tl-item key"><span class="tl-dot"></span><span class="tl-date">1878 BCE</span> <span class="tl-ev"><strong>Rebekah waters the camels</strong> for a stranger, unasked&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:19, 20">Gen. 24:19, 20</a>)</span>.</span></div>
+    <div class="tl-item key"><span class="tl-dot"></span><span class="tl-date">1878 BCE</span> <span class="tl-ev"><strong>&ldquo;I am willing to go.&rdquo;</strong> She leaves&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:58">Gen. 24:58</a>)</span>.</span></div>
     <div class="tl-item future"><span class="tl-dot"></span><span class="tl-date">1858 BCE</span> <span class="tl-ev">After 20 years of barrenness and Isaac's prayers, Jacob and Esau are born&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 25:21">Gen. 25:21</a>)</span>.</span></div>
   </div>
   <p class="tl-legend"><span class="k">&#9679;</span> the events of this chapter &nbsp;&middot;&nbsp; <span class="f">&#9679;</span> outcome &nbsp;&middot;&nbsp; &#9679; surrounding history</p>
 </div>
 
 <h3>Who</h3>
-
 <table>
   <tr><th>Person</th><th>Who they were</th></tr>
   <tr><td>Abraham's servant</td><td>Sent to find a wife for Isaac; prayed for a specific sign at the well.</td></tr>
   <tr><td>Bethuel</td><td>Rebekah's father; Abraham's nephew.</td></tr>
   <tr><td>Laban</td><td>Rebekah's brother, who features heavily in Jacob's life later.</td></tr>
   <tr><td>Isaac</td><td>Forty years old, still grieving his mother&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:67">Gen. 24:67</a>)</span>.</td></tr>
-  <tr><td>The ten camels</td><td>The unwitting test &mdash; and a great deal of water.</td></tr>
+  <tr><td>The camels</td><td>The unwitting test &mdash; and a great deal of water.</td></tr>
 </table>
 
 <h3>What was going on</h3>
+<p>The servant had prayed for a sign, and it was a shrewd one: that the right woman would not only give him a drink but <span class="kw">offer to water his camels</span> as well. Rebekah did exactly that&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:19">Gen. 24:19</a>)</span>.</p><p>Consider what she volunteered for. Thirsty camels after a long desert journey, watered by hand from a well, one jar at a time. Genesis captures the labour: &ldquo;she quickly emptied her jar into the drinking trough and <span class="kw">ran again and again</span> to the well&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:20">Gen. 24:20</a>)</span>. This was hours of heavy work for a stranger who had asked only for a sip.</p><p>The servant's reaction tells you how unusual this was. He &ldquo;silently stared at her in amazement&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:21">Gen. 24:21</a>)</span>.</p>
+  </div>
+</section>
 
-<p>The servant had prayed for a sign, and it was a shrewd one. He asked that the right woman would not only give him a drink but offer to water his camels as well. Rebekah did exactly that: &ldquo;I will also draw water for your camels until they are done drinking&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:19">Gen. 24:19</a>)</span>.</p><p>Consider what she had actually volunteered for. Ten thirsty camels after a long desert journey, watered by hand from a well, one jar at a time. Genesis captures the sheer labour of it: &ldquo;she quickly emptied her jar into the drinking trough and ran again and again to the well&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:20">Gen. 24:20</a>)</span>. This was hours of heavy work for a stranger who had asked only for a sip.</p><p>The servant's reaction tells you how unusual this was. He &ldquo;silently stared at her in amazement&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:21">Gen. 24:21</a>)</span>.</p>
-
-<h2><span class="num">2.</span>What was Jehovah&rsquo;s view of the situation?</h2>
-
-<div class="heart"><b>Heart of it</b>Jehovah answered the prayer before it was finished, and the sign he chose revealed character rather than appearance.</div><p><strong>The answer came early.</strong> &ldquo;Even before he finished speaking, Rebekah &hellip; came out with her water jar on her shoulder&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:15">Gen. 24:15</a>)</span>. Jehovah was not waiting to be persuaded.</p><p><strong>The test was for character, not looks.</strong> Genesis does mention that she was beautiful&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:16">Gen. 24:16</a>)</span>, but that is not what identified her. What identified her was hard work offered to a stranger with no expectation of return.</p><div class="verse">
+<section class="block truth">
+  <div class="band"><span class="n">2.</span>What was Jehovah&rsquo;s view of the situation?</div>
+  <div class="body">
+<div class="heart"><b>Heart of it</b>Jehovah answered the prayer before it was finished, and the sign he chose revealed character rather than appearance.</div><p><strong>The answer came early.</strong> &ldquo;Even before he finished speaking, Rebekah &hellip; came out&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:15">Gen. 24:15</a>)</span>. Jehovah was not waiting to be persuaded.</p><p><strong>The test was for character, not looks.</strong> Genesis mentions that she was beautiful&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:16">Gen. 24:16</a>)</span>, but that is not what identified her. What identified her was <span class="kw">hard work offered to a stranger</span> with no expectation of return.</p><div class="verse">
   <span class="cite"><a class="scripture" data-q="Genesis 24:19, 20">Genesis 24:19, 20</a></span>
   <p>&ldquo;When she finished giving him a drink, she said: &lsquo;I will also draw water for your camels until they are done drinking.&rsquo; So she quickly emptied her jar into the drinking trough and ran again and again to the well to draw water, and she kept drawing water for all his camels.&rdquo;</p>
-</div><p><strong>Her willingness was honoured for generations.</strong> The line from Rebekah runs through Jacob to the nation of Israel and ultimately to the Messiah. A single decision made at a well in one afternoon carried that far.</p>
+</div><p><strong>Her willingness was honoured for generations.</strong> The line from Rebekah runs through Jacob to the nation of Israel and ultimately to the Messiah.</p>
+  </div>
+</section>
 
-<h2><span class="num">3.</span>What was Rebekah doing &mdash; and how did she cope?</h2>
-
-<div class="heart"><b>Heart of it</b>She worked hard when no one had asked her to, and she decided quickly when it counted.</div><p><strong>She went beyond what was requested.</strong> The servant asked for &ldquo;a little sip of water&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:17">Gen. 24:17</a>)</span>. She gave him that, and then volunteered several hours of labour. Nobody was watching who could reward her &mdash; which is precisely why it revealed who she was.</p><p><strong>She answered for herself.</strong> Her family suggested a delay of about ten days. The question was put to her directly &mdash; &ldquo;Will you go with this man?&rdquo; &mdash; and she gave a four-word answer with no hedging&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:58">Gen. 24:58</a>)</span>.</p><p><strong>She left permanently.</strong> This was not a trip. She was leaving her parents, her brother, her language and her landscape, almost certainly for good.</p><h3>How did she cope?</h3><ul>
-  <li><strong>Hard work was already normal for her.</strong> The camels did not turn her into a diligent person; they revealed that she already was one.</li>
-  <li><strong>She had evidence to act on.</strong> The servant had told the family the whole story&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:66">Gen. 24:66</a>)</span>. Her decision was quick, but it was not uninformed.</li>
+<section class="block way">
+  <div class="band"><span class="n">3.</span>What was Rebekah doing &mdash; and how did she cope?</div>
+  <div class="body">
+<div class="heart"><b>Heart of it</b>She worked hard when no one had asked her to, and she decided quickly when it counted.</div><p><strong>She went beyond what was requested.</strong> The servant asked for &ldquo;a little sip of water&rdquo;&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:17">Gen. 24:17</a>)</span>. She gave him that, and then volunteered hours of labour. <span class="kw">Nobody was watching who could reward her</span> &mdash; which is precisely why it revealed who she was.</p><p><strong>She answered for herself.</strong> Her family suggested a delay. The question was put to her directly, and she gave a four-word answer with no hedging&nbsp;<span class="cite">(<a class="scripture" data-q="Genesis 24:58">Gen. 24:58</a>)</span>.</p><p><strong>She left permanently.</strong> This was not a trip. She was leaving her parents, her brother, her language and her landscape, almost certainly for good.</p><h3>How did she cope?</h3><ul>
+  <li><strong>Hard work was already normal for her.</strong> The camels did not make her diligent; they revealed that she already was.
+    <div class="scrip"><a class="scripture ref" data-q="Colossians 3:23">Colossians 3:23</a> &mdash; &ldquo;Whatever you are doing, work at it whole-souled as for Jehovah, and not for men,&rdquo;</div>
+  </li>
+  <li><strong>She treated a stranger generously.</strong> Hospitality to someone who could give her nothing turned out to matter enormously.
+    <div class="scrip"><a class="scripture ref" data-q="Hebrews 13:2">Hebrews 13:2</a> &mdash; &ldquo;Do not forget hospitality, for through it some unknowingly entertained angels.&rdquo;</div>
+  </li>
+  <li><strong>She was faithful in something small.</strong> Watering animals is about as ordinary as work gets &mdash; and it decided everything that followed.
+    <div class="scrip"><a class="scripture ref" data-q="Luke 16:10">Luke 16:10</a> &mdash; &ldquo;The person faithful in what is least is faithful also in much, and the person unrighteous in what is least is unrighteous also in much.&rdquo;</div>
+  </li>
   <li><strong>She was willing before she was certain.</strong> &ldquo;I am willing to go&rdquo; is not the same as &ldquo;I know how this ends.&rdquo; She had no guarantees about Isaac at all.</li>
 </ul>
+  </div>
+</section>
 
-<h2><span class="num">4.</span>How can this account benefit me today?</h2>
-
-<div class="heart"><b>Heart of it</b>Character shows up in the work nobody asked you to do &mdash; and opportunities often arrive with no time to deliberate.</div>
+<section class="block life">
+  <div class="band"><span class="n">4.</span>How can this account benefit me today?</div>
+  <div class="body">
+<div class="heart"><b>Heart of it</b>Character shows up in the <span class="kw">work nobody asked you to do</span> &mdash; and opportunities often arrive with no time to deliberate.</div>
 
 <ul>
-  <li><strong>Do the unasked work.</strong> Rebekah's future turned on effort she volunteered when there was no visible reason to. What you do when no one is assessing you is who you are.</li>
+  <li><strong>Do the unasked work.</strong> Rebekah's future turned on effort she volunteered when there was no visible reason to.
+    <div class="scrip"><a class="scripture ref" data-q="Colossians 3:23">Colossians 3:23</a> &mdash; &ldquo;Whatever you are doing, work at it whole-souled as for Jehovah, and not for men,&rdquo;</div>
+  </li>
+  <li><strong>Small kindnesses are not small.</strong> An afternoon at a well placed her in the line of the promise. You rarely see the size of a kind act at the time.
+    <div class="scrip"><a class="scripture ref" data-q="Luke 16:10">Luke 16:10</a> &mdash; &ldquo;The person faithful in what is least is faithful also in much, and the person unrighteous in what is least is unrighteous also in much.&rdquo;</div>
+  </li>
+  <li><strong>Keep going when the work is thankless.</strong> Nobody thanked her mid-way through the camels. That is usually when people stop.
+    <div class="scrip"><a class="scripture ref" data-q="Galatians 6:9">Galatians 6:9</a> &mdash; &ldquo;So let us not give up in doing what is fine, for in due time we will reap if we do not tire out.&rdquo;</div>
+  </li>
+  <li><strong>God does not overlook the effort.</strong> What looked like an unremarkable act of service was being watched and recorded.
+    <div class="scrip"><a class="scripture ref" data-q="Hebrews 6:10">Hebrews 6:10</a> &mdash; &ldquo;For God is not unrighteous so as to forget your work and the love you showed for his name&rdquo;</div>
+  </li>
   <li><strong>Be someone who can decide.</strong> She did not need ten days. When a clear opportunity appears, chronic hesitation is its own answer.</li>
   <li><strong>Willingness matters more than certainty.</strong> She could not know how it would turn out. She could know that she was willing.</li>
-  <li><strong>Small kindnesses are not small.</strong> An afternoon at a well placed her in the line of the promise. You rarely see the size of a kind act at the time you are doing it.</li>
-  <li><strong>Leaving comfort is a real cost &mdash; count it, then go.</strong> She left family, home and country. The account never pretends that was easy.</li>
-  <li><strong>Answer for yourself.</strong> Others offered to decide the timing for her. She spoke for herself, respectfully and clearly.</li>
 </ul>
 
 <div class="callout focus">
   <p style="margin:0"><strong>Ask yourself:</strong> What would someone learn about me from the jobs I do when there is no credit in them?</p>
 </div>
+  </div>
+</section>
 
-<h2>Key passages <span class="note">(New World Translation)</span></h2>
+<h2 class="plain">Key passages <span class="note">(New World Translation)</span></h2>
 
 <div class="verse">
   <span class="cite"><a class="scripture" data-q="Genesis 24:58">Genesis 24:58</a></span>
@@ -205,7 +265,7 @@
   <p>&ldquo;After that Isaac brought her into the tent of Sarah his mother. Thus he took Rebekah as his wife; and he fell in love with her, and Isaac found comfort after the loss of his mother.&rdquo;</p>
 </div>
 
-<h2>Sources</h2>
+<h2 class="plain">Sources</h2>
 <ol class="src">
   <li><em>Walk Courageously With God</em> (wcg), chapter 6, &ldquo;REBEKAH &mdash; She Ventured Into the Unknown&rdquo;</li>
   <li>Bible text: <em>New World Translation of the Holy Scriptures</em> (2013 Revision).</li>
