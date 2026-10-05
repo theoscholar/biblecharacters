@@ -62,12 +62,83 @@
   .tl-legend .k{color:var(--accent);} .tl-legend .f{color:var(--good);}
   @media(max-width:640px){table{font-size:13px;}}
 </style>
+
+<style>
+  /* ---- retrofit: dyslexia-friendly reading controls ---------------- */
+  :root{--fs:19px;--ws:0.03em;--ls:0.01em;--card:#1A1D22;
+        --hibg:#3b3418;--hitext:#ffe08a;--bandtext:#14161a;
+        --tone1:#4db3aa;--tone2:#a884d6;--tone3:#e0983f;--tone4:#5cb56e;}
+  html[data-theme="light"]{
+        --p:#1B1B1A;--s:#4A4A47;--muted:#6B6B67;--line:#D6D3CC;--bg:#FBF9F4;
+        --surface:#F1EEE6;--card:#FFFFFF;--accent:#1F5FA8;--good:#2F7A3F;
+        --warning:#9A6200;--danger:#A33;--hibg:#fff4cf;--hitext:#2b2b33;
+        --bandtext:#ffffff;--tone1:#2e6f6a;--tone2:#6a4c93;--tone3:#b5651d;--tone4:#2f6d3c;}
+
+  body{font-size:var(--fs);word-spacing:var(--ws);letter-spacing:var(--ls);
+       line-height:1.7;text-align:left;}
+  main{max-width:800px;}
+  p{max-width:66ch;} ul{max-width:66ch;} li{margin:10px 0;}
+
+  /* key words */
+  .kw{background:var(--hibg);color:var(--hitext);padding:0 4px;border-radius:3px;
+      font-weight:700;}
+
+  /* controls */
+  .bar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px;}
+  .bar button{background:var(--surface);color:var(--p);border:1px solid var(--line);
+     border-radius:999px;padding:7px 15px;font-size:.72em;font-family:inherit;
+     cursor:pointer;letter-spacing:.02em;}
+  .bar button:hover{border-color:var(--accent);color:var(--accent);}
+
+  details.howto{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+     padding:6px 18px;margin:0 0 26px;}
+  details.howto summary{cursor:pointer;font-weight:600;font-size:.85em;padding:10px 0;
+     color:var(--s);letter-spacing:.02em;}
+  details.howto[open] summary{color:var(--accent);}
+  details.howto ul{margin:.2em 0 14px;font-size:.88em;}
+
+  /* encased sections */
+  section.block{margin:34px 0 10px;}
+  section.block > .band{color:var(--bandtext);border-radius:12px 12px 0 0;
+     padding:12px 18px;font-size:1.02em;font-weight:700;line-height:1.35;letter-spacing:0;}
+  section.block > .band .num{color:var(--bandtext);opacity:.85;font-weight:800;margin-right:8px;}
+  section.block > .body{background:var(--card);border:2px solid var(--line);border-top:none;
+     border-radius:0 0 12px 12px;padding:4px 20px 18px;}
+  section.block > .body > *:first-child{margin-top:14px;}
+  section.tone1 > .band{background:var(--tone1);} section.tone1 > .body{border-color:var(--tone1);}
+  section.tone2 > .band{background:var(--tone2);} section.tone2 > .body{border-color:var(--tone2);}
+  section.tone3 > .band{background:var(--tone3);} section.tone3 > .body{border-color:var(--tone3);}
+  section.tone4 > .band{background:var(--tone4);} section.tone4 > .body{border-color:var(--tone4);}
+  section.block h3:first-of-type{margin-top:6px;}
+  .tl-dot{border-color:var(--card) !important;}
+
+  h2.plain{font-size:1.05em;font-weight:700;}
+  @media(max-width:640px){section.block > .body{padding:4px 14px 16px;}}
+</style>
 </head>
 <body>
 <main>
 
 <h1>Daniel, Hananiah, Mishael, and Azariah — Four Youths Who Would Not Bend</h1>
 <p class="subtitle"><em>Character study &middot; compiled August 5, 2026</em></p>
+
+<div class="bar">
+  <button onclick="theme()">&#9728; Light mode</button>
+  <button onclick="fs(1)">A+</button>
+  <button onclick="fs(-1)">A&minus;</button>
+  <button onclick="spacing()">Extra spacing</button>
+</div>
+
+<details class="howto">
+  <summary>How to use these notes</summary>
+  <ul>
+    <li>The coloured headings are the <strong>sections</strong>. Take one box at a time.</li>
+    <li><span class="kw">Highlighted words</span> are the ones worth remembering. If you read nothing else, read those.</li>
+    <li>Blue dotted words are <strong>scripture links</strong>. Tap one to open the verse.</li>
+    <li>Use the buttons above to make the text bigger or add more space between words.</li>
+  </ul>
+</details>
+
 
 <div class="callout">
   <div class="kt">"You are someone very precious."</div>
@@ -76,11 +147,14 @@
 
 <p class="intro"><strong>Focus:</strong> Four young Jewish nobles were carried off from Jerusalem to Babylon, stripped of their homeland, their temple, and even their names — and were then handed the finest education and the best food the ancient world could offer. Everything about the arrangement was designed to make them Babylonians. It failed. This note follows all four through their whole recorded lives: <em>who they were and what their names meant, when they lived and every account they appear in, the decisions they made, how Jehovah felt about them, and what we can take from them.</em></p>
 
-<h2><span class="num">1.</span>Who they were — and what their names meant</h2>
+<section class="block tone1">
+  <div class="band"><span class="num">1.</span>Who they were — and what their names meant</div>
+  <div class="body">
+
 
 <p><strong>Their background.</strong> All four were "from the tribe of Judah" (Dan. 1:6), taken in the deportation of 617 B.C.E. along with King Jehoiachin and the other "foremost men" of the land (2 Ki. 24:15). Nebuchadnezzar had ordered his chief court official to select "some of the Israelites, including those of royal and noble descent" — youths "without any defect, of good appearance, endowed with wisdom, knowledge, and discernment" (Dan. 1:3, 4). So they were young men of rank, quite possibly royal princes, and Daniel was "likely a teenage prince" when he arrived in Babylon. They were the cream of a conquered nation, selected precisely because they were the kind of raw material an empire could use.</p>
 
-<p><strong>The renaming — and why it happened.</strong> Their Hebrew names each carried a statement about the God of Israel. Their new Babylonian names each pointed to a Babylonian god. That was not an accident of translation; it was policy. <em>Insight on the Scriptures</em> states of Daniel's new name: "The purpose was evidently to effect Daniel's naturalization and alienate him from the worship of Jehovah."</p>
+<p><strong>The renaming — and why it happened.</strong> Their Hebrew names each carried a statement about the God of Israel. Their new Babylonian names each pointed to a Babylonian god. <span class="kw">That was not an accident</span> of translation; it was policy. <em>Insight on the Scriptures</em> states of Daniel's new name: "The purpose was evidently to effect Daniel's naturalization and alienate him from the worship of Jehovah."</p>
 
 <table>
   <tr><th>Hebrew name</th><th>Meaning</th><th>Babylonian name</th><th>What it pointed to</th></tr>
@@ -90,11 +164,17 @@
   <tr><td><strong>Azariah</strong></td><td>"Jehovah Has Helped"</td><td><strong>Abednego</strong></td><td>Probably "Servant of Nebo," a Babylonian god. Some scholars believe "Nego" is a deliberate corruption of "Nebo," so as not to offend Azariah.</td></tr>
 </table>
 
-<p><strong>They kept the names that mattered.</strong> They accepted the Babylonian labels — there is no record of them protesting the renaming, and Scripture uses those names freely. But <em>among themselves</em> the old names stayed. Decades into the exile, the record still says "Daniel then went to his house and informed his companions Hananiah, Mishael, and Azariah of the matter" (2:17). They let Babylon change what it called them; they did not let Babylon change who they were. The Babylonians also kept using "Daniel" alongside "Belteshazzar" (4:18, 19; 5:12, 13).</p>
+<p><strong><span class="kw">They kept the names that mattered</span>.</strong> They accepted the Babylonian labels — there is no record of them protesting the renaming, and Scripture uses those names freely. But <em>among themselves</em> the old names stayed. Decades into the exile, the record still says "Daniel then went to his house and informed his companions Hananiah, Mishael, and Azariah of the matter" (2:17). They let Babylon change what it called them; they did not let Babylon change who they were. The Babylonians also kept using "Daniel" alongside "Belteshazzar" (4:18, 19; 5:12, 13).</p>
 
 <p class="note"><em>A note on Daniel's absence in chapter 3.</em> Only the three companions are named at the image of gold. Why Daniel was not there is not stated, and <em>Insight</em> is careful about this: "Just why Daniel was not also involved in the issue of integrity encountered by his companions… is not certain. The Bible is silent on the matter." His record before and after — including the lions' pit some 65 years later — gives "full assurance that, if present, and whatever the circumstances, Daniel did not compromise by bowing before the image."</p>
 
-<h2><span class="num">2.</span>When they lived — the accounts, in order</h2>
+
+  </div>
+</section>
+<section class="block tone2">
+  <div class="band"><span class="num">2.</span>When they lived — the accounts, in order</div>
+  <div class="body">
+
 
 <p>Daniel's recorded life spans about 82 years, from a captive teenager under Nebuchadnezzar to a man near 100 serving under Cyrus the Persian. The three companions appear in the first three chapters; after their promotion in chapter 3, Scripture is silent about them. Dates follow the chronology used in our publications.</p>
 
@@ -120,34 +200,46 @@
   <p class="tl-legend"><span class="k">&#9679;</span> Accounts involving the four &nbsp;&middot;&nbsp; <span class="f">&#9679;</span> Jehovah's closing promise to Daniel &nbsp;&middot;&nbsp; <span>&#9679;</span> Surrounding history</p>
 </div>
 
-<h2><span class="num">3.</span>The decisions they made</h2>
+
+  </div>
+</section>
+<section class="block tone3">
+  <div class="band"><span class="num">3.</span>The decisions they made</div>
+  <div class="body">
+
 
 <h3>They settled the question before it was asked</h3>
-<p>"Daniel <em>resolved in his heart</em> that he would not defile himself with the king's delicacies or with the wine he drank" (1:8). The decision was made inwardly, in advance, before any pressure was applied. Three reasons are given for regarding the food as defiling: the meat may have come from animals prohibited by the Law; it may not have been properly bled; and eating it could have counted as sharing in the worship of a false god (Lev. 11:4-8; 17:10-12; compare 1 Cor. 10:18, 21, 22).</p>
+<p>"Daniel <em>resolved in his heart</em> that he would not defile himself with the king's delicacies or with the wine he drank" (1:8). The decision was made <span class="kw">inwardly, in advance</span>, before any pressure was applied. Three reasons are given for regarding the food as defiling: the meat may have come from animals prohibited by the Law; it may not have been properly bled; and eating it could have counted as sharing in the worship of a false god (Lev. 11:4-8; 17:10-12; compare 1 Cor. 10:18, 21, 22).</p>
 
 <h3>They asked respectfully instead of defying</h3>
-<p>Daniel did not stage a protest. He "asked the principal court official for permission" (1:8), and when that official explained his fear of the king, Daniel went to the guardian with a workable proposal: "Please, test your servants for ten days" (1:12). The stand was uncompromising; the manner was mild and reasonable. Jehovah cooperated — "the true God caused the principal court official to show Daniel favor and mercy" (1:9).</p>
+<p>Daniel <span class="kw">did not stage a protest</span>. He "asked the principal court official for permission" (1:8), and when that official explained his fear of the king, Daniel went to the guardian with a workable proposal: "Please, test your servants for ten days" (1:12). The stand was uncompromising; the manner was mild and reasonable. Jehovah cooperated — "the true God caused the principal court official to show Daniel favor and mercy" (1:9).</p>
 
 <h3>They excelled at what they were given to do</h3>
-<p>They did not treat a pagan curriculum as a reason to underperform. At the end of three years, "in every matter requiring wisdom and understanding that the king would ask them about, he found them ten times better than all the magic-practicing priests and the conjurers in his entire realm" (1:20). Then they served — and served well — in a government whose religion they rejected. Sixty years later Daniel's enemies could still find "no grounds for accusation or anything corrupt, for he was trustworthy" (6:4).</p>
+<p>They did not treat a pagan curriculum as <span class="kw">a reason to underperform</span>. At the end of three years, "in every matter requiring wisdom and understanding that the king would ask them about, he found them ten times better than all the magic-practicing priests and the conjurers in his entire realm" (1:20). Then they served — and served well — in a government whose religion they rejected. Sixty years later Daniel's enemies could still find "no grounds for accusation or anything corrupt, for he was trustworthy" (6:4).</p>
 
 <h3>They prayed together when it was life or death</h3>
 <p>Facing the execution of all Babylon's wise men, Daniel "went to his house and informed his companions Hananiah, Mishael, and Azariah of the matter" and "asked them to pray for mercy from the God of heaven" (2:17, 18). Four young men in a foreign capital, holding one another up. Notice too that when Daniel was promoted, his first act was to ask the king to appoint his three friends (2:49).</p>
 
 <h3>They refused to bow — without demanding a rescue</h3>
-<p>The three men's answer at the plain of Dura is the high-water mark of the account, and its most striking words are the conditional ones: <em>"But even if he does not…"</em> (3:17, 18). They did not bargain with Jehovah, and they did not presume on him. As the February 2019 <em>Watchtower</em> puts it, "Jehovah chose to save those men immediately, but they did not presume that he would do that for them. Rather, they were willing to accept whatever outcome Jehovah would permit."</p>
+<p>The three men's answer at the plain of Dura is the high-water mark of the account, and its most striking words are <span class="kw">the conditional ones</span>: <em>"But even if he does not…"</em> (3:17, 18). They did not bargain with Jehovah, and they did not presume on him. As the February 2019 <em>Watchtower</em> puts it, "Jehovah chose to save those men immediately, but they did not presume that he would do that for them. Rather, they were willing to accept whatever outcome Jehovah would permit."</p>
 
 <h3>Daniel kept a routine — and did not hide it</h3>
 <p>When the 30-day ban was signed, "as soon as Daniel knew that the decree had been signed, he went to his house, which had the windows of his roof chamber open toward Jerusalem. And three times a day he got down on his knees and prayed… <em>as he had regularly done prior to this</em>" (6:10). He did not add prayer to make a point, and he did not subtract it to stay safe. He simply did not change. That is what a habit built over 80 years looks like under pressure.</p>
 
 <h3>Daniel kept studying, and confessed the nation's sin as his own</h3>
-<p>In his 80's or 90's he was still reading: "I, Daniel, discerned by the books the number of years mentioned in the word of Jehovah to Jeremiah the prophet" (9:2). And in the prayer that followed he did not stand apart from his people — "we have sinned" (9:5). The man Ezekiel had named as righteous prayed as one of the guilty.</p>
+<p>In his 80's or 90's he was <span class="kw">still reading</span>: "I, Daniel, discerned by the books the number of years mentioned in the word of Jehovah to Jeremiah the prophet" (9:2). And in the prayer that followed he did not stand apart from his people — "we have sinned" (9:5). The man Ezekiel had named as righteous prayed as one of the guilty.</p>
 
-<h2><span class="num">4.</span>How Jehovah felt about them</h2>
+
+  </div>
+</section>
+<section class="block tone4">
+  <div class="band"><span class="num">4.</span>How Jehovah felt about them</div>
+  <div class="body">
+
 
 <p><strong>He said so out loud, while Daniel was still a young man.</strong> Ezekiel, prophesying in the same exile, was told to name three men whose righteousness would save no one but themselves: "Noah, Daniel, and Job" (Eze. 14:14, 20). Noah and Job had spent decades building a record with God. Daniel "may have been only in his late teens or early 20's" when Jehovah put him in that company.</p>
 
-<p><strong>He called him precious — three times.</strong> "You are someone very precious" (9:23). "O Daniel, you very precious man" (10:11). "Do not be afraid, O very precious man. May you have peace. Be strong, yes, be strong" (10:19). Those were spoken across the span of Daniel's old age, and the August 2023 <em>Watchtower</em> draws the point out: "Jehovah loved Daniel, not because of his physical appearance or his social status, but because of the type of person that this young man chose to be. And Jehovah continued to love Daniel throughout his long and remarkable life."</p>
+<p><strong><span class="kw">He called him precious</span> — three times.</strong> "You are someone very precious" (9:23). "O Daniel, you very precious man" (10:11). "Do not be afraid, O very precious man. May you have peace. Be strong, yes, be strong" (10:19). Those were spoken across the span of Daniel's old age, and the August 2023 <em>Watchtower</em> draws the point out: "Jehovah loved Daniel, not because of his physical appearance or his social status, but because of the type of person that this young man chose to be. And Jehovah continued to love Daniel throughout his long and remarkable life."</p>
 
 <p><strong>He equipped them.</strong> "The true God gave these four youths knowledge and insight into every kind of writing and wisdom; and Daniel was given understanding in all sorts of visions and dreams" (1:17). Their exam results were not merely diligence; they were a gift.</p>
 
@@ -157,7 +249,13 @@
 
 <p><strong>The verdict was still standing centuries later.</strong> Jesus spoke of "Daniel the prophet" (Matt. 24:15). Paul, listing the faithful, wrote of those who "stopped the mouths of lions, quenched the force of fire" — all four of them, in seven words (Heb. 11:33, 34). And the last word Daniel ever received was a promise of resurrection: "You will rest, but you will stand up for your lot at the end of the days" (12:13).</p>
 
-<h2><span class="num">5.</span>Lessons for us</h2>
+
+  </div>
+</section>
+<section class="block tone1">
+  <div class="band"><span class="num">5.</span>Lessons for us</div>
+  <div class="body">
+
 
 <ul class="benefit">
   <li><strong>Decide before the test arrives.</strong> Daniel "resolved in his heart" (1:8) before anyone put a plate in front of him. The November 2018 <em>Watchtower</em> applies this directly: "It is far easier to take a stand if we have already sought out and adopted Jehovah's view on such matters and have determined in advance what we will do."</li>
@@ -171,7 +269,10 @@
   <li><strong>Faithfulness is a lifetime, not a moment.</strong> Some 65 years separate the furnace from the lions' pit. The last thing recorded of Daniel is a promise of resurrection — and that promise is what makes an entire life of integrity a good bargain (12:13).</li>
 </ul>
 
-<h2>Key passages (New World Translation)</h2>
+
+  </div>
+</section>
+<h2 class="plain">Key passages (New World Translation)</h2>
 
 <div class="verse"><span class="cite">Daniel 1:6, 7</span><p>"Now among them were some from the tribe of Judah: Daniel, Hananiah, Mishael, and Azariah. And the principal court official assigned names to them; he gave to Daniel the name Belteshazzar, to Hananiah the name Shadrach, to Mishael the name Meshach, and to Azariah the name Abednego."</p></div>
 
@@ -209,7 +310,7 @@
 
 <div class="verse"><span class="cite">Hebrews 11:33, 34</span><p>"Through faith they defeated kingdoms, brought about righteousness, obtained promises, stopped the mouths of lions, quenched the force of fire, escaped the edge of the sword, from a weak state were made powerful…"</p></div>
 
-<h2>Sources</h2>
+<h2 class="plain">Sources</h2>
 <p class="note">Verse text is the <em>New World Translation of the Holy Scriptures</em> (2013 Revision), extracted verbatim from the local study Bible (<code>Publications / nwtsty_E</code>). This note reflects published material only; it does not draw on any source outside the library.</p>
 <ul>
   <li><strong>Daniel chapters 1–12</strong> — <a href="https://wol.jw.org/en/wol/b/r1/lp-e/nwt/27/1">wol.jw.org NWT</a>. Related: 2 Kings 24:8-17; Ezekiel 14:14, 20; Matthew 24:15; Hebrews 11:33, 34.</li>
@@ -300,6 +401,26 @@
   }});
   var nodes=[],n; while((n=walker.nextNode())) nodes.push(n);
   nodes.forEach(linkify);
+})();
+</script>
+
+<script>
+(function(){
+  var root = document.documentElement, size = 19, wide = false;
+  window.theme = function(){
+    var light = root.getAttribute('data-theme') === 'light';
+    root.setAttribute('data-theme', light ? 'dark' : 'light');
+    document.querySelector('.bar button').textContent = light ? '\u2600 Light mode' : '\u263e Dark mode';
+  };
+  window.fs = function(d){
+    size = Math.min(30, Math.max(15, size + d));
+    root.style.setProperty('--fs', size + 'px');
+  };
+  window.spacing = function(){
+    wide = !wide;
+    root.style.setProperty('--ws', wide ? '0.13em' : '0.03em');
+    root.style.setProperty('--ls', wide ? '0.045em' : '0.01em');
+  };
 })();
 </script>
 </body>

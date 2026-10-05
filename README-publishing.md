@@ -7,7 +7,7 @@ This folder **is** the Git working copy. Edit the originals in
 `..\Study Notes\`, then run the publish script — it copies them in under their
 clean published names, commits, and pushes.
 
-Currently published: **3 pages** — Daniel and companions, Botswana, South Africa.
+Currently published: **9 character studies**. The Botswana and South Africa reports moved to the `africa` repository (Personal Study Projects\Countries\Countries Site) on Oct 05, 2026.
 The Jeremiah guides in `..\Study Notes Site\` are deliberately *not* part of this
 site; see "Adding the Jeremiah guides later" below.
 
