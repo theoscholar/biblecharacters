@@ -1,7 +1,7 @@
 <#
-    publish.ps1 - update the live Study Notes site.
+    publish.ps1 - update the live Bible Characters site.
 
-    Copies the study notes from "Theo Library\Study Notes" into this folder
+    Copies the study notes from "..\Character Study Notes" (the parent folder) into this folder
     under their published (clean, lowercase-hyphenated) names, then commits and
     pushes to GitHub. GitHub Pages redeploys in about a minute.
 
@@ -10,7 +10,7 @@
         .\publish.ps1 -Message "Add notes on Esther"
         .\publish.ps1 -WhatIf          # show what would change, push nothing
 
-    Live site: https://theoscholar.github.io/studynotes/
+    Live site: https://theoscholar.github.io/biblecharacters/
 #>
 
 [CmdletBinding(SupportsShouldProcess = $true)]
@@ -21,7 +21,7 @@ param(
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 
-$source  = Join-Path (Split-Path $PSScriptRoot -Parent) 'Study Notes'
+$source  = Split-Path $PSScriptRoot -Parent          # ..\Character Study Notes
 $mapFile = Join-Path $PSScriptRoot 'name-map.tsv'
 
 if (-not (Test-Path -LiteralPath $source))  { throw "Source folder not found: $source" }
@@ -59,13 +59,13 @@ foreach ($line in (Get-Content -LiteralPath $mapFile -Encoding UTF8)) {
 Write-Host "Loaded $($map.Count) filename mappings." -ForegroundColor DarkGray
 
 # ---- 2. Warn about originals that have no mapping ---------------------------
-# Only the top level of "Study Notes" is considered; subfolders are ignored.
+# Only the top level of "Character Study Notes" is considered; subfolders are ignored.
 $missing = Get-ChildItem -LiteralPath $source -Filter *.html |
     Where-Object { -not $map.ContainsKey($_.Name) }
 
 if ($missing) {
     Write-Host ""
-    Write-Warning "These files in 'Study Notes' have no entry in name-map.tsv and will NOT be published:"
+    Write-Warning "These files in 'Character Study Notes' have no entry in name-map.tsv and will NOT be published:"
     $missing | ForEach-Object { Write-Host "    $($_.Name)" -ForegroundColor Yellow }
     Write-Host "  Add a line to name-map.tsv (original<TAB>published-name.html) to include them," -ForegroundColor Yellow
     Write-Host "  and remember to add a card on index.html too." -ForegroundColor Yellow
@@ -128,4 +128,4 @@ git push -u origin main
 if ($LASTEXITCODE -ne 0) { throw "git push failed. If this is an auth error, see README-publishing.md." }
 
 Write-Host "`nPushed. GitHub Pages usually redeploys within a minute:" -ForegroundColor Green
-Write-Host "  https://theoscholar.github.io/studynotes/" -ForegroundColor Green
+Write-Host "  https://theoscholar.github.io/biblecharacters/" -ForegroundColor Green
